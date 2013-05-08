@@ -6,6 +6,7 @@
 ._*
 .Python
 .idea
+.env
 dev.db
 /static
 /uploads

@@ -44,20 +44,24 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', '')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME', '')
-
-MEDIA_ROOT = os.path.join(APP_BASEDIR, 'uploads')
-MEDIA_URL = '/uploads/'
-
-if 'runserver' not in sys.argv:
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+MEDIA_ROOT = os.path.join(APP_BASEDIR, 'upload')
+MEDIA_URL = os.environ.get('MEDIA_URL', '/upload/')
 
 STATIC_ROOT = os.path.join(APP_BASEDIR, 'static')
-STATIC_URL = '/static/'
+STATIC_URL = os.environ.get('STATIC_URL', '/static/')
 
-STATICFILES_DIRS = (os.path.join(WEBAPP_DIR, 'static'),)
+if all((var in os.environ for var in ('AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_STORAGE_BUCKET_NAME'))):
+    DEFAULT_FILE_STORAGE = 'ruediwidmerch.s3utils.MediaRootS3BotoStorage'
+    STATICFILES_STORAGE = 'ruediwidmerch.s3utils.StaticRootS3BotoStorage'
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+    AWS_PRELOAD_METADATA = True
+    AWS_S3_SECURE_URLS = False
+    AWS_QUERYSTRING_AUTH = False
+    AWS_HEADERS = {'Cache-Control': 'max-age=2592000'}
+
+#STATICFILES_DIRS = (os.path.join(WEBAPP_DIR, 'static'),)
 
 ROOT_URLCONF = 'ruediwidmerch.urls'
 
@@ -86,8 +90,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
-    'ruediwidmerch.context_processors.feincms_pages',
-    'ruediwidmerch.context_processors.config',
 )
 
 INSTALLED_APPS = (
@@ -105,11 +107,11 @@ INSTALLED_APPS = (
     'fhadmin',
     'tinymce',
     'south',
-    'mptt',
+    #'mptt',
 
-    'feincms',
-    'feincms.module.page',
-    'feincms.module.medialibrary',
+    #'feincms',
+    #'feincms.module.page',
+    #'feincms.module.medialibrary',
     'feincms_oembed',
 
     #'elephantblog',
