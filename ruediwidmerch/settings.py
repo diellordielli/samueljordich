@@ -5,7 +5,8 @@ import dj_database_url
 WEBAPP_DIR = os.path.dirname(os.path.abspath(__file__))
 APP_BASEDIR = os.path.abspath(os.path.join(WEBAPP_DIR, os.path.pardir))
 
-DEBUG = os.getenv('DEBUG_MODE', 'true') == 'true'
+DEBUG = any((cmd in sys.argv for cmd in ('runserver', 'shell', 'dbshell', 'sql', 'sqlall'))) \
+    or os.getenv('DEBUG', 'false') == 'true'
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['localhost', '.herokuapp.com', '.heroku.feinheit.ch']
