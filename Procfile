@@ -1,0 +1,1 @@
+web: gunicorn -k gevent {{ project_name }}.wsgi
