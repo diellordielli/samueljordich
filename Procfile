@@ -1,1 +1,1 @@
-web: gunicorn -k gevent {{ project_name }}.wsgi
+web: gunicorn ruediwidmer.wsgi:application -b 0.0.0.0:$PORT
