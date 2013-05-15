@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block cartoons %}
+    <div id="container">
+        {% for cartoon in cartoons %}
+            <div class="item image{{ cartoon.width }}-{{ cartoon.height }}">
+            {{ cartoon.category }}
+                {% if cartoon.image %}
+                    <img src = "{{ cartoon.image.url }}">
+                {% endif %}
+            </div>
+            
+        {% endfor %}
+    </div>
+{% endblock %}
