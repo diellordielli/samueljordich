@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block portrait %}
+    <div id="container">
+        {% for portrait in portraits %}
+            <div class="corner-stamp">
+                {% if portrait.image %}
+                    <img src = "{{ portrait.image }}">
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
