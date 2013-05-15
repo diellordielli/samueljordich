@@ -11,12 +11,27 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
+
+    # Home
+    url(r'^$', 'ruediwidmerch.views.home', name='home'),
+
+    # Texte
+    url(r'^column/$', 'ruediwidmerch.views.column', name='column'),
+
+    # News
+    url(r'^news/$', 'ruediwidmerch.views.news', name='news'),
+
+    # Portrait
+    url(r'^portrait/$', 'ruediwidmerch.views.portrait', name='portrait'),
+
+    # Kontakt
+    url(r'^contact/$', 'ruediwidmerch.views.contact', name='contact'),
 )
 
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += patterns('',
-        url(r'^uploads/(.*)', 'django.views.static.serve', {
+        url(r'^upload/(.*)', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
             'show_indexes': True,
         }),
