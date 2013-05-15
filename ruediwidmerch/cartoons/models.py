@@ -3,6 +3,16 @@ from django.db import models
 
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    def __unicode__(self):
+        return u"%s %s" % (self.name)
+
+
 class Cartoon(models.Model):
     IMAGE_WIDTH = (
         ('1', '1'),
@@ -19,7 +29,7 @@ class Cartoon(models.Model):
 
     description = models.TextField(blank=True)
     ordering = models.IntegerField(blank=True)
-    category = models.CharField(max_length=200)
+    category = models.ForeignKey(Category, related_name="category")
     date = models.DateTimeField()
     image = models.ImageField(upload_to="cartoons")
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)
@@ -30,14 +40,3 @@ class Cartoon(models.Model):
 
     def __unicode__(self):
         return u"%s %s" % (self.description,  self.category)
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=200)
-    cartoons = models.ForeignKey(Cartoon, related_name="categories", blank=True)
-
-    class Meta:
-        verbose_name_plural = "Categories"
-
-    def __unicode__(self):
-        return u"%s %s" % (self.name)
