@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block news %}
+        <div class="eventcontainer">
+            <div class="eventcontainertitle">
+                <p>< Januar 2013 ></p>
+            </div>
+            {% for event in events %}
+                <div class="eventsingle">
+                    <div class="eventsingledate">
+                        {{ event.date|date:"d F" }}
+                    </div>
+                    <div class="eventsingletitle">
+                        <b>{{ event.title }}</b><br>
+                        -----
+                    </div>
+                    <div class="eventsingledesc">
+                        {{ event.text }}
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="newsarchive">
+                News<br>
+                2012
+            </div>
+        </div>
+        {% for news in newss %}
+        <div class="newscontainer">
+            <div class="newssingle">
+                <div class="newssingletitle">
+                    <b>{{ news.title }}</b><br>
+                    -----
+                </div>
+                <div class="newssingledate">
+                    {{ news.date|date:"d.m.Y" }}
+                </div>
+                <div class="newssingledesc">
+                    {{ news.text }}
+                </div>
+                <div class="newssingleimg">
+                </div>
+                <hr class="hrnews">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
