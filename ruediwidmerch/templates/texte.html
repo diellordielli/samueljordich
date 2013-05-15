@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block text %}
+    <div class="archivecontainer">
+        <div class="archivetitle">
+            <p>< Kolume 2012 ></p>
+        </div>
+        <div class="archivelist">
+            <br>
+            {% for column in columns %}
+                <div class="texttitle">
+                    <b>{{ column.title }}</b><br>
+                    <b>---</b><br>
+                    {{ column.magazine }} vom {{ column.date|date:"d b Y" }}
+                </div>
+                <br>
+                <br>
+            {% endfor %}
+            <br>
+        </div>
+    </div>
+    <div class="regionwhite">
+        {% for column in columns %}
+            <div class="texttitle">
+                <p><b>{{ column.title }}</b></p>
+            </div>
+            <div class="textsubtitle">
+                {{ column.subtitle }}<br>
+                <b>---</b>
+                <div class="textdate">
+                    <b>{{ column.magazine }} vom {{ column.date|date:"d b Y" }}</b>
+                </div>
+            </div>
+            <div class="textcontent">
+                <p>{{ column.text }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
