@@ -118,6 +118,11 @@ INSTALLED_APPS = (
     #'elephantblog',
 
     'ruediwidmerch',
+    'ruediwidmerch.cartoons',
+    'ruediwidmerch.column',
+    'ruediwidmerch.events',
+    'ruediwidmerch.news',
+    'ruediwidmerch.portrait',
 )
 
 from memcacheify import memcacheify
@@ -131,9 +136,9 @@ from fhadmin import FHADMIN_GROUPS_REMAINING
 _ = lambda x: x
 
 FHADMIN_GROUPS_CONFIG = [
-    (_('Content'), {
-        'apps': ('page', 'medialibrary'),
-    }),
+#    (_('Content'), {
+#        'apps': ('page', 'medialibrary'),
+#    }),
     (_('Others'), {
         'apps': (FHADMIN_GROUPS_REMAINING),
     }),
