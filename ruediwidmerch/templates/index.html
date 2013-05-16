@@ -3,12 +3,25 @@
     <div id="container">
         {% for cartoon in cartoons %}
             <div class="item image{{ cartoon.width }}-{{ cartoon.height }}">
-            {{ cartoon.category }}
                 {% if cartoon.image %}
                     <img src = "{{ cartoon.image.url }}">
                 {% endif %}
             </div>
-            
+        {% endfor %}
+        {% for category in categories %}
+            <div class="item category">
+                {{ category.name }}
+            </div>
         {% endfor %}
     </div>
+    {% for category1 in categories %}
+        {% for cartoon in cartoons %}
+            <div class="ggg">
+                {% if cartoon.category == category1 %}
+                    <img src = "{{ cartoon.image.url }}">
+                    {{ cartoon.category }}
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endfor %}
 {% endblock %}

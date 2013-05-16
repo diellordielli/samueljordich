@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block portrait %}
     <div id="container">
+        <div class="corner-stamp">
+            <img src="{{ STATIC_URL }}img/ruedi.png" />
+        </div>
         {% for portrait in portraits %}
-            <div class="corner-stamp">
-                {% if portrait.image %}
-                    <img src = "{{ portrait.image }}">
-                {% endif %}
+            <div class="portrait">
+                <div class="item image{{ portrait.width }}-{{ portrait.height }}">
+                    <div class="portraittitle">
+                        {{ portrait.title }}
+                    </div>
+                    <div class="portraitsubtitle">
+                        {{ portrait.subtitle }}
+                    </div>
+                    <div class="portraitdesc">
+                        {{ portrait.description }}
+                    </div>
+                </div>
             </div>
         {% endfor %}
     </div>

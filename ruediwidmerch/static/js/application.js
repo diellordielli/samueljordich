@@ -50,4 +50,5 @@ $(document).ready(function() {
         $('#akontakt a').css({'display':'inline'});
     });
 
+
 });

@@ -63,6 +63,7 @@
     width: 190px;
     margin: 5px;
     float: left;
+    background-color: #DADBDC;
 }
 
 .item.image1-1, .item.image1-2, .item.image1-3, .item.image1-4, .item.image1-1 img, .item.image1-2 img, .item.image1-3 img, .item.image1-4 img {
@@ -93,9 +94,29 @@
   height: 470px;
 }
 
+
+.item.category {
+  padding-top: 30px;
+  padding-left: 20px;
+  width: 210px;
+  height: 200px;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #FFF;
+  background-color: #000;
+}
+
+.item.portrait {
+  width: 430px;
+  height: 430px;
+  background-color: #DADBDC;
+}
+
 .corner-stamp {
-  position: relative;
   float: right;
+  margin-top: 100px;
+  width: 430px;
+  height: 430px;
 }
 
 .archivecontainer {
@@ -264,14 +285,42 @@
 }
 
 .hrnews {
-  border: none; 
+  border: none;
   border-top: 1px dashed black; 
-  height: 1px; 
-  color: black; 
-  background: transparent 
+  height: 1px;
+  color: black;
+  background: transparent;
 }
 
-.portraitimg
+.portraittitle {
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #FFF;
+}
+
+.portraittitle2 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #000;
+}
+
+.portraitsubtitle {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #000;
+  display: none;
+}
+
+.portraitdesc {
+  margin-left: 10px;
+  display: none;
+  padding-bottom: 20px;
+}
 
 .isotope,
 .isotope .isotope-item {
@@ -297,4 +346,9 @@
       -ms-transition-property:     -ms-transform, opacity;
        -o-transition-property:      -o-transform, opacity;
           transition-property:         transform, opacity;
+}
+
+.item.big {
+  width: 470px;
+  height: auto;
 }
