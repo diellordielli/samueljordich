@@ -10,7 +10,7 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
 
     def __unicode__(self):
-        return u"%s %s" % (self.name)
+        return u"%s" % (self.name)
 
 
 class Cartoon(models.Model):
@@ -29,7 +29,7 @@ class Cartoon(models.Model):
 
     description = models.TextField(blank=True)
     ordering = models.IntegerField(blank=True)
-    category = models.ForeignKey(Category, related_name="category")
+    category = models.ForeignKey(Category, related_name="category", blank=True)
     date = models.DateTimeField()
     image = models.ImageField(upload_to="cartoons")
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)

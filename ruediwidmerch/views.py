@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 from .cartoons.models import Cartoon
 from .cartoons.models import Category
 from .column.models import Column
@@ -11,9 +10,11 @@ from .portrait.models import Portrait
 
 def home(request):
     cartoons = Cartoon.objects.all()
+    categories = Category.objects.all()
 
     return render(request, 'index.html', {
         'cartoons': cartoons,
+        'categories': categories,
     })
 
 

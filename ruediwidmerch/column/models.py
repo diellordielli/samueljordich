@@ -20,7 +20,7 @@ class Column(models.Model):
     )
 
     title = models.CharField(max_length=100)
-    subtitle = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100, blank=True)
     magazine = models.CharField(max_length=100)
     date = models.DateTimeField()
     text = models.TextField()
@@ -28,6 +28,7 @@ class Column(models.Model):
 
     class Meta:
         verbose_name_plural = "Columns"
+        ordering = ['-date']
 
     def __unicode__(self):
         return u"%s %s %s" % (self.title, self.subtitle, self.text)

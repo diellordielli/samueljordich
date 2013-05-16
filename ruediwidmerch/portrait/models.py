@@ -20,6 +20,7 @@ class Portrait(models.Model):
     )
 
     title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100, blank=True)
     description = models.TextField()
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)
     height = models.CharField(max_length=20, choices=IMAGE_HEIGHT)
@@ -29,4 +30,4 @@ class Portrait(models.Model):
         verbose_name_plural = "Portraits"
 
     def __unicode__(self):
-        return u"%s %s" % (self.title, self.description)
+        return u"%s %s %s" % (self.title, self.subtitle, self.description)

@@ -10,6 +10,7 @@ class Event(models.Model):
 
     class Meta:
         verbose_name_plural = "Events"
+        ordering = ['-date']
 
     def __unicode__(self):
         return u"%s %s" % (self.title, self.text)
