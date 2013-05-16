@@ -95,6 +95,35 @@
 }
 
 
+
+.item.portrait1-1, .item.portrait1-2, .item.portrait1-3, .item.portrait1-4, .item.portrait1-1 img, .item.portrait1-2 img, .item.portrait1-3 img, .item.portrait1-4 img {
+  width: 110px;
+}
+
+.item.portrait2-1, .item.portrait2-2, .item.portrait2-3, .item.portrait2-4, .item.portrait2-1 img, .item.portrait2-2 img, .item.portrait2-3 img, .item.portrait2-4 img {
+  width: 230px;
+}
+
+.item.portrait4-1, .item.portrait4-2, .item.portrait4-3, .item.portrait4-4, .item.portrait4-1 img, .item.portrait4-2 img, .item.portrait4-3 img, .item.portrait4-4 img {
+  width: 470px;
+}
+
+.item.portrait1-1, .item.portrait2-1, .item.portrait3-1, .item.portrait4-1, .item.portrait1-1 img, .item.portrait2-1 img, .item.portrait3-1 img, .item.portrait4-1 img {
+  height: 110px;
+}
+
+.item.portrait1-2, .item.portrait2-2, .item.portrait3-2, .item.portrait4-2, .item.portrait1-2 img, .item.portrait2-2 img, .item.portrait3-2 img, .item.portrait4-2 img {
+  height: 230px;
+}
+
+.item.portrait1-3, .item.portrait2-3, .item.portrait3-3, .item.portrait4-3, .item.portrait1-3 img, .item.portrait2-3 img, .item.portrait3-3 img, .item.portrait4-3 img {
+  height: 340px;
+}
+
+.item.portrait1-4, .item.portrait2-4, .item.portrait3-4, .item.portrait4-4, .item.portrait1-4 img, .item.portrait2-4 img, .item.portrait3-4 img, .item.portrait4-4 img {
+  height: 470px;
+}
+
 .item.category {
   padding-top: 30px;
   padding-left: 20px;
@@ -105,13 +134,13 @@
   color: #FFF;
   background-color: #000;
 }
-
+/*
 .item.portrait {
   width: 430px;
   height: 430px;
   background-color: #DADBDC;
 }
-
+*/
 .corner-stamp {
   float: right;
   margin-top: 100px;
