@@ -39,4 +39,4 @@ class Cartoon(models.Model):
         verbose_name_plural = "Cartoons"
 
     def __unicode__(self):
-        return u"%s %s" % (self.description,  self.category)
+        return u"%s %s" % (self.image,  self.category)
