@@ -1,29 +1,40 @@
 {% extends "base.html" %}
 {% block news %}
-        <div class="eventcontainer">
-            <div class="eventcontainertitle">
-                <p>< Januar 2013 ></p>
-            </div>
+    <div class="eventouter">
+        <div class="eventinner">
             {% for event in events %}
-                <div class="eventsingle">
-                    <div class="eventsingledate">
-                        {{ event.date|date:"d F" }}
+                <div class="eventcontainer">
+                    <div class="eventcontainertitle">
+                        <div class="navleft">
+                            <
+                        </div>
+                        {{ event.date|date:"F Y" }}
+                        <div class="navright">
+                            >
+                        </div>
                     </div>
-                    <div class="eventsingletitle">
-                        <b>{{ event.title }}</b><br>
-                        -----
-                    </div>
-                    <div class="eventsingledesc">
-                        {{ event.text }}
-                    </div>
+                        <div class="eventsingle">
+                            <div class="eventsingledate">
+                                {{ event.date|date:"d F" }}
+                            </div>
+                            <div class="eventsingletitle">
+                                <b>{{ event.title }}</b><br>
+                                -----
+                            </div>
+                            <div class="eventsingledesc">
+                                {{ event.text }}
+                            </div>
+                        </div>
                 </div>
             {% endfor %}
-
-            <div class="newsarchive">
-                News<br>
-                2012
-            </div>
         </div>
+    </div>
+
+    <div class="newsarchive">
+        News<br>
+        2012
+    </div>
+    <div class="newslist">
         {% for news in newss %}
         <div class="newscontainer">
             <div class="newssingle">
