@@ -1,5 +1,5 @@
 $(function(){
-  
+
     var $container = $('#container');
   
     $container.isotope({
@@ -9,7 +9,7 @@ $(function(){
         }
     })
 
-    $('.item').click(function(){
+    $('.item.portrait').click(function(){
         var $this = $(this),
             tileStyle = $this.hasClass('big') ? { width: 50, height: 50} : { width: 170, height: 110};
         $this.toggleClass('big');
