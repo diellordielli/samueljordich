@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.fancybox.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/flexslider.css">
 </head>
 <body>
     <div class ="page">
@@ -25,32 +26,17 @@
             </a>            
         </div>
         <div class="nav">
-            <div id="cartoonimg">
-                <a href="/"><img src="{{ STATIC_URL }}img/cartoons.png" /></a>
-            </div>
             <div id="acartoon">
                 <a href="/">Cartoons</a>
-            </div>
-            <div id="texteimg">
-                <a href="/column"><img src="{{ STATIC_URL }}img/texte.png" /></a>
             </div>
             <div id="atexte">
                 <a href="/column">Texte</a>
             </div>
-            <div id="newsimg">
-                <a href="/news"><img src="{{ STATIC_URL }}img/news.png" /></a>
-            </div>
             <div id="anews">
                 <a href="/news">News</a>
             </div>
-            <div id="portraitimg">
-                <a href="/portrait"><img src="{{ STATIC_URL }}img/portrait.png" /></a>
-            </div>
             <div id="aportrait">
                 <a href="/portrait">Portrait</a>
-            </div>
-            <div id="kontaktimg">
-                <a href="/contact"><img src="{{ STATIC_URL }}img/kontakt.png" /></a>
             </div>
             <div id="akontakt">
                 <a href="/contact">Kontakt</a>
@@ -71,7 +57,10 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="{{ STATIC_URL }}js/jquery.isotope.min.js"></script>
 <script src="{{ STATIC_URL }}js/isotope.js"></script>
-<script src="{{ STATIC_URL }}js/application.js"></script>
+<!--<script src="{{ STATIC_URL }}js/application.js"></script>-->
+<script src="{{ STATIC_URL }}js/eventslider.js"></script>
+<script src="{{ STATIC_URL }}js/columnslider.js"></script>
+
 
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="{{ STATIC_URL }}lib/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />

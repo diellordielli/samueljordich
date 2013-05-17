@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
     $('#acartoon').on('mouseover', function(event) {
         $('#acartoon a').hide();
         $('#cartoonimg').css({'display':'inline'});
@@ -49,6 +50,5 @@ $(document).ready(function() {
         $('#kontaktimg').hide();
         $('#akontakt a').css({'display':'inline'});
     });
-
 
 });
