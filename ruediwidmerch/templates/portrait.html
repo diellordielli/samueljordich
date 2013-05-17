@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block portrait %}
     <div id="container">
-        <div class="corner-stamp">
+        <div class="item imagecorner">
             <img src="{{ STATIC_URL }}img/ruedi.png" />
         </div>
         {% for portrait in portraits %}
             <div class="portrait">
-                <div class="item portrait{{ portrait.width }}-{{ portrait.height }}">
+                <div class="item portrait portrait{{ portrait.width }}-{{ portrait.height }}">
                     <div class="portraittitle">
                         {{ portrait.title }}
                     </div>
