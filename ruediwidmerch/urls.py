@@ -18,6 +18,9 @@ urlpatterns = patterns('',
     # Texte
     url(r'^column/$', 'ruediwidmerch.views.column', name='column'),
 
+    # Textdetail
+    url(r'^column/(?P<id>\d+)/$', 'ruediwidmerch.views.single_column', name='single_column'),
+
     # News
     url(r'^news/$', 'ruediwidmerch.views.news', name='news'),
 

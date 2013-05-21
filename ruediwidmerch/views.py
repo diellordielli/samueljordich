@@ -49,3 +49,13 @@ def portrait(request):
 def contact(request):
     return render(request, 'contact.html', {
     })
+
+
+def single_column(request, id):
+    columns = Column.objects.order_by('-date')
+    newest = Column.objects.get(id=id)
+
+    return render(request, 'texte.html', {
+        'columns': columns,
+        'newest': newest,
+    })

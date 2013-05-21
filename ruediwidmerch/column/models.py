@@ -35,3 +35,7 @@ class Column(models.Model):
 
     def __unicode__(self):
         return u"%s %s %s" % (self.title, self.subtitle, self.text)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ("single_column", (), {"id": self.id})
