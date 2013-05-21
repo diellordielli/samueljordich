@@ -2,31 +2,34 @@
 {% block news %}
     <div class="eventouter">
         <div class="eventinner">
-            {% for event in events %}
+        {% regroup events by month as month_list %}
+        {% for month in month_list %}
                 <div class="eventcontainer">
                     <div class="eventcontainertitle">
                         <div class="navleft">
                             <
                         </div>
-                        {{ event.date|date:"F Y" }}
+                        {{ month.grouper }}
                         <div class="navright">
                             >
                         </div>
                     </div>
+                        {% for event in month.list %}
                     <div class="eventsingle">
-                        <div class="eventsingledate">
-                            {{ event.date|date:"d F" }}
-                        </div>
-                        <div class="eventsingletitle">
-                            <b>{{ event.title }}</b><br>
-                            -----
-                        </div>
-                        <div class="eventsingledesc">
-                            {{ event.text }}
-                        </div>
+                            <div class="eventsingledate">
+                                {{ event.date|date:"d F" }}
+                            </div>
+                            <div class="eventsingletitle">
+                                <b>{{ event.title }}</b><br>
+                                -----
+                            </div>
+                            <div class="eventsingledesc">
+                                {{ event.text }}
+                            </div>
                     </div>
+                        {% endfor %}
                 </div>
-            {% endfor %}
+        {% endfor %}
         </div>
     </div>
     <div class="newsarchive">
