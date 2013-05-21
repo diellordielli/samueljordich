@@ -19,10 +19,12 @@ def home(request):
 
 
 def column(request):
-    columns = Column.objects.all()
+    columns = Column.objects.order_by('-date')
+    newest = Column.objects.latest('date')
 
     return render(request, 'texte.html', {
         'columns': columns,
+        'newest': newest,
     })
 
 
