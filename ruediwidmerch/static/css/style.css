@@ -6,6 +6,7 @@
     margin-left: auto;
     margin-right: auto;
     height: auto;
+    font-family:'Andale$MonoW01-Regular';
     background-color: #FFF;
 }
 
@@ -37,7 +38,7 @@
 
 .nav a {
     margin-left: 40px;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
     color: #000;
 }
@@ -51,14 +52,14 @@
   display: inline;
 }
 
-#acartoon:hover, #atexte:hover, #anews:hover, #aportrait:hover, #akontakt:hover {
-  background: url(../../static/img/cartoons.png) bottom;
-  background-position: 0 0;
+#acartoon:hover {
+  background: url(../../static/img/texte.png) bottom;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
 }
 
-#acartoon:hover img {
-  width: 200px;
-  height: 200px;
+#acartoon:hover a {
+  display: none;
 }
 
 #container {
@@ -175,8 +176,9 @@
 }
 
 .archivetitle {
+  margin-bottom: 35px;
   text-align: center;
-  font-size: 32px;
+  font-size: 29px;
   text-transform: uppercase;
 }
 
@@ -294,14 +296,20 @@
   background-color: #000;  
 }
 
+.newslist {
+  position: relative;
+  float: left;
+  width: 440px;
+}
+
 .newscontainer {
   float: left;
   position: relative;
-  max-width: 440px;
+  max-width: 410px;
   top: 100px;
   width: 100%;
   height: auto;
-  left: 30px;
+  padding-left: 30px;
   background-color: #FFF;  
 }
 
@@ -401,8 +409,6 @@
 
 .eventinner {
   position: relative;
-  width: 10000px;
-  height: auto;
 }
 
 .eventouter {
@@ -411,7 +417,19 @@
   overflow: hidden;
 }
 
-.navleft, .navright {
+
+.archiveinner {
+  position: relative;
+}
+
+.archiveouter {
+  float: left;
+  width: 325px;
+  height: 1000px;
+  overflow: hidden;
+}
+
+.navleft, .navright, .navleft2, .navright2 {
   position: relative;
   top: 6px;
   display: inline;
@@ -428,7 +446,7 @@
 
 .navright {
   position: relative;
-  right: -88px;
+  right: -60px;
 }
 
 @media only screen and (max-width: 508px) {
