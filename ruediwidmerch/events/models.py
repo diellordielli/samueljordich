@@ -12,5 +12,8 @@ class Event(models.Model):
         verbose_name_plural = "Events"
         ordering = ['-date']
 
+    def month(self):
+        return self.date.strftime('%B %Y')
+
     def __unicode__(self):
         return u"%s %s" % (self.title, self.text)
