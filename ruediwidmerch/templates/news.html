@@ -32,10 +32,13 @@
         {% endfor %}
         </div>
     </div>
-    <div class="newsarchive">
-        News<br>
-        2012
-    </div>
+    <!--
+    {% for news in newss %}
+        <div class="newsarchive">
+                {{ news.date|date:"Y" }}
+        </div>
+    {% endfor %}
+-->
     <div class="newslist">
         {% for news in newss %}
         <div class="newscontainer">

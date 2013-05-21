@@ -16,19 +16,19 @@
                         >
                     </div>
                 </div>
-                <div class="archivelist">
-                    {% for column in year.list %}
+                {% for column in year.list %}
+                <a href={{ column.get_absolute_url }}>
+                    <div class="archivelist">
                         <br>
-                            <div class="texttitle">
-                                <b>{{ column.title }}</b><br>
-                                <b>---</b><br>
-                                {{ column.magazine }} vom {{ column.date|date:"d.m.Y" }}
-                            </div>
-                            <br>
-                            <br>
+                        <div class="texttitle">
+                            <b>{{ column.title }}</b><br>
+                            <b>---</b><br>
+                            {{ column.magazine }} vom {{ column.date|date:"d.m.Y" }}
+                        </div>
                         <br>
-                    {% endfor %}
-                </div>
+                    </div>
+                </a>
+                {% endfor %}
             </div>
             
         {% endfor %}
