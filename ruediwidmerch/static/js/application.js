@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
     $('#acartoon').on('mouseover', function(event) {
         $('#acartoon a').hide();
         $('#cartoonimg').css({'display':'inline'});
