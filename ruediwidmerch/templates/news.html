@@ -13,23 +13,22 @@
                             >
                         </div>
                     </div>
-                        <div class="eventsingle">
-                            <div class="eventsingledate">
-                                {{ event.date|date:"d F" }}
-                            </div>
-                            <div class="eventsingletitle">
-                                <b>{{ event.title }}</b><br>
-                                -----
-                            </div>
-                            <div class="eventsingledesc">
-                                {{ event.text }}
-                            </div>
+                    <div class="eventsingle">
+                        <div class="eventsingledate">
+                            {{ event.date|date:"d F" }}
                         </div>
+                        <div class="eventsingletitle">
+                            <b>{{ event.title }}</b><br>
+                            -----
+                        </div>
+                        <div class="eventsingledesc">
+                            {{ event.text }}
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
     </div>
-
     <div class="newsarchive">
         News<br>
         2012

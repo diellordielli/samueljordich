@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.fancybox.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/flexslider.css">
 </head>
 <body>
     <div class ="page">
@@ -61,6 +60,11 @@
 <script src="{{ STATIC_URL }}js/eventslider.js"></script>
 <script src="{{ STATIC_URL }}js/columnslider.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
+</script>
 
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="{{ STATIC_URL }}lib/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
