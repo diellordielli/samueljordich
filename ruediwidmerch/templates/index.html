@@ -2,9 +2,12 @@
 {% block cartoons %}
     <div id="container">
         {% for cartoon in cartoons %}
+
             <div class="item image{{ cartoon.width }}-{{ cartoon.height }}">
                 {% if cartoon.image %}
+                <a class="fancybox" rel="group" href="{{ cartoon.image.url }}">
                     <img src = "{{ cartoon.image.url }}">
+                </a>
                 {% endif %}
             </div>
         {% endfor %}
