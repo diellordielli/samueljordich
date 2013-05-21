@@ -33,14 +33,15 @@
     position: absolute;
     top: 80px;
     right: 0px;
-    width: 535px;
+    width: 550px;
 }
 
 .nav a {
-    margin-left: 40px;
-    font-size: 15px;
-    text-decoration: none;
-    color: #000;
+  position: absolute;
+  margin-left: 40px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #000;
 }
 
 .nav img {
@@ -48,18 +49,40 @@
   height: 25px;
 }
 
-#acartoon, #atexte, #anews, #aportrait, #akontakt {
-  display: inline;
+.nav div {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 22px;
+}
+
+#acartoon:hover a, #atexte:hover a, #anews:hover a, #aportrait:hover a, #akontakt:hover a {
+  display: none;
 }
 
 #acartoon:hover {
-  background: url(../../static/img/texte.png) bottom;
-  background-repeat: no-repeat;
-  background-position: 0px 0px;
+  position: relative;
+  background-position: 30px 0px;
+  background: url(../../static/img/cartoon.png) bottom;
 }
 
-#acartoon:hover a {
-  display: none;
+#atexte:hover {
+  position: absolute;
+  background-repeat: no-repeat;
+  background: url(../../static/img/texte.png) bottom;
+}
+
+#anews:hover {
+  position: absolute;
+  background: url(../../static/img/news.png) bottom;
+}
+
+#aportrait:hover {
+  background: url(../../static/img/portrait.png) bottom;
+}
+
+#akontakt:hover {
+  background: url(../../static/img/kontakt.png) bottom;
 }
 
 #container {
@@ -175,6 +198,10 @@
   background-color: #DADBDC;
 }
 
+.archivecontainer a {
+  text-decoration: none;
+}
+
 .archivetitle {
   margin-bottom: 35px;
   text-align: center;
@@ -184,10 +211,10 @@
 
 .archivelist {
   position: relative;
-  font-size: 12px;
+  font-size: 13px;
   width: 210px;
   padding-left: 20px;
-  background-color: #FFF;
+  color: white;
 }
 
 .regionwhite {
@@ -233,7 +260,7 @@
   float: left;
   position: relative;
   max-width: 410px;
-  top: 100px;
+  margin-top: 100px;
   width: 100%;
   height: auto;
   padding-left: 60px;
@@ -283,7 +310,8 @@
 
 .newsarchive {
   float: left;
-  position: absolute;
+  position: relative;
+  margin-right: 10px;
   max-width: 110px;
   width: 100%;
   height: 100px;
@@ -347,7 +375,6 @@
 .portraittitle {
   font-size: 35px;
   font-weight: bold;
-  margin-left: 10px;
   color: #FFF;
 }
 
