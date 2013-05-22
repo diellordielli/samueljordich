@@ -28,7 +28,7 @@ class Cartoon(models.Model):
     )
 
     description = models.TextField(blank=True)
-    ordering = models.IntegerField(blank=True)
+    ordering = models.IntegerField()
     category = models.ForeignKey(Category, related_name="category", blank=True)
     date = models.DateTimeField()
     image = models.ImageField(upload_to="cartoons")

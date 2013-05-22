@@ -30,11 +30,11 @@ class Column(models.Model):
         verbose_name_plural = "Columns"
         ordering = ['-date']
 
-    def year(self):
-        return self.date.strftime('%Y')
-
     def __unicode__(self):
         return u"%s %s %s" % (self.title, self.subtitle, self.text)
+
+    def year(self):
+        return self.date.strftime('%Y')
 
     @models.permalink
     def get_absolute_url(self):
