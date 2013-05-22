@@ -1,17 +1,15 @@
 var carouselOptions = {
-    speed: 400,
-    imageRatio: 0.67,
-    imageRatioH: 0.435
+    speed: 400
 }
 
 $(document).ready(function() {
     // gets updated on resize and on page load
-    var totalWidth, totalImages, stepWidth, navpos = 0,
+    var totalWidth, totalElemnts, stepWidth, navpos = 0,
 
         // set superscope totalWidth
         stepWidth = $(".eventinner > .eventcontainer:first").outerWidth(true);
-        totalImages = $(".eventinner > .eventcontainer").length;
-        totalWidth = (stepWidth * totalImages);
+        totalElemnts = $(".eventinner > .eventcontainer").length;
+        totalWidth = (stepWidth * totalElemnts);
 
         $(".eventinner").width(totalWidth);
 
@@ -36,7 +34,7 @@ $(document).ready(function() {
         var newLeft = $('.eventinner').get(0).offsetLeft + stepWidth;
 
         if (newLeft > 0) {
-            newLeft = -(totalImages -1) * stepWidth;
+            newLeft = -(totalElemnts -1) * stepWidth;
         }
 
         navpos = -newLeft / stepWidth;
