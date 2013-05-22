@@ -11,7 +11,7 @@ $(function(){
 
     $('.item.portrait').click(function(){
         var $this = $(this),
-            tileStyle = $this.hasClass('big') ? { width: 50, height: 50} : { width: 170, height: 110};
+            tileStyle = $this.hasClass('big');
         $this.toggleClass('big');
 
         $this.find('.portraitdesc').toggle();
