@@ -29,5 +29,8 @@ class News(models.Model):
         verbose_name_plural = "News"
         ordering = ['date']
 
+    def year(self):
+        return self.date.strftime('%Y')
+
     def __unicode__(self):
         return u"%s %s" % (self.title, self.text)
