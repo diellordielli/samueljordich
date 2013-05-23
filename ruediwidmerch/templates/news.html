@@ -14,31 +14,36 @@
                             >
                         </div>
                     </div>
-                        {% for event in month.list %}
-                    <div class="eventsingle">
-                            <div class="eventsingledate">
-                                {{ event.date|date:"d F" }}
-                            </div>
-                            <div class="eventsingletitle">
-                                <b>{{ event.title }}</b><br>
-                                -----
-                            </div>
-                            <div class="eventsingledesc">
-                                {{ event.text }}
-                            </div>
-                    </div>
-                        {% endfor %}
+                    {% for event in month.list %}
+                        <div class="eventsingle">
+                                <div class="eventsingledate">
+                                    {{ event.date|date:"d F" }}
+                                </div>
+                                <div class="eventsingletitle">
+                                    <b>{{ event.title }}</b><br>
+                                    -----
+                                </div>
+                                <div class="eventsingledesc">
+                                    {{ event.text }}
+                                </div>
+                        </div>
+                    {% endfor %}
                 </div>
         {% endfor %}
         </div>
     </div>
-<!--
-    {% for news in newss %}
-        <div class="newsarchive">
-                {{ news.date|date:"Y" }}
-        </div>
-    {% endfor %}
--->
+
+    <div class="newsarchiveall">
+        {% regroup newsall by year as year_list %}
+        {% for year in year_list %}
+            <a href="{% url 'ruediwidmerch.views.newsyear' year=year.grouper %}">
+                <div class="newsarchive">
+                        {{ year.grouper }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
     <div class="newslist">
         {% for news in newss %}
         <div class="newscontainer">
