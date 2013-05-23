@@ -317,12 +317,25 @@
   width: 100%;
   height: 100px;
   padding-top: 10px;
+  margin-bottom: 10px;
   font-size: 30px;
   font-weight: bold;
   color: #FFF;
   text-align: center;
   text-transform: uppercase;
   background-color: #000;  
+}
+
+.newsarchive a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.newsarchiveall {
+  position: absolute;
+  float: left;
+  top: 616px;
+  width: 480px;
 }
 
 .newslist {
@@ -475,23 +488,6 @@
 .navright {
   position: relative;
   right: -60px;
-}
-
-@media only screen and (max-width: 925px) {
-
-  .eventouter, .newslist {
-margin: 0 auto;
-  width: 50em;
-  }
-}
-
-@media only screen and (max-width: 815px) {
-
-  .archiveouter, .regionwhite {
-    float: none;
-    margin: 0 auto;
-    padding-left: 0px;
-  }
 }
 
 @media only screen and (max-width: 508px) {
