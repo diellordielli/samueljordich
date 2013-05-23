@@ -38,6 +38,18 @@ def news(request):
     })
 
 
+def newsyear(request, year):
+    newsall = News.objects.all()
+    newss = News.objects.filter(date__year=year)
+    events = Event.objects.all()
+
+    return render(request, 'news.html', {
+        'newsall': newsall,
+        'newss': newss,
+        'events': events,
+    })
+
+
 def portrait(request):
     portraits = Portrait.objects.all()
 
