@@ -24,6 +24,9 @@ urlpatterns = patterns('',
     # News
     url(r'^news/$', 'ruediwidmerch.views.news', name='news'),
 
+    # News Year
+    url(r'^news/(?P<year>\d{4})/$', 'ruediwidmerch.views.newsyear', name='newsyear'),
+
     # Portrait
     url(r'^portrait/$', 'ruediwidmerch.views.portrait', name='portrait'),
 
