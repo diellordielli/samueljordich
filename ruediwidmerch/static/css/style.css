@@ -33,58 +33,27 @@
     position: absolute;
     top: 80px;
     right: 0px;
-    width: 550px;
+    width: 535px;
 }
 
 .nav a {
-  position: absolute;
-  margin-left: 40px;
-  font-size: 15px;
-  text-decoration: none;
-  color: #000;
+    margin-left: 40px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
 }
 
 .nav img {
-  width: 30px;
+  width: 100px;
   height: 25px;
 }
 
-.nav div {
-  position: relative;
-  display: inline-block;
-  width: 100px;
-  height: 22px;
-}
-
-#acartoon:hover a, #atexte:hover a, #anews:hover a, #aportrait:hover a, #akontakt:hover a {
+#cartoonimg, #texteimg, #newsimg, #portraitimg, #kontaktimg {
   display: none;
 }
 
-#acartoon:hover {
-  position: relative;
-  background-position: 30px 0px;
-  background: url(../../static/img/cartoon.png) bottom;
-}
-
-#atexte:hover {
-  position: absolute;
-  background-repeat: no-repeat;
-  background: url(../../static/img/texte.png) bottom;
-}
-
-#anews:hover {
-  position: absolute;
-  background: url(../../static/img/news.png) bottom;
-}
-
-#aportrait:hover {
-  position: absolute;
-  background: url(../../static/img/portrait.png) bottom;
-}
-
-#akontakt:hover {
-  position: absolute;
-  background: url(../../static/img/kontakt.png) bottom;
+#acartoon, #atexte, #anews, #aportrait, #akontakt {
+  display: inline;
 }
 
 #container {
@@ -340,6 +309,7 @@
   color: #FFF;
   text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
   background-color: #000;  
 }
 
