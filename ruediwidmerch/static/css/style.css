@@ -188,6 +188,12 @@
   height: 430px;
 }
 
+.archiveall {
+  position: relative;
+  max-width: 325px;
+  width: 100%;
+}
+
 .archivecontainer {
   float: left;
   position: relative;
@@ -196,7 +202,7 @@
   width: 100%;
   height: auto;
   padding-bottom: 40px;
-  background-color: #DADBDC;
+  background-color: #d3d3d3;
 }
 
 .archivecontainer a {
@@ -216,6 +222,10 @@
   width: 210px;
   padding-left: 20px;
   color: white;
+}
+
+.archivelist.active {
+  background-color: white;
 }
 
 .regionwhite {
@@ -257,6 +267,13 @@
   text-transform: uppercase;
 }
 
+.eventall {
+  float: left;
+  position: relative;
+  max-width: 470px;
+  width: 100%;
+}
+
 .eventcontainer {
   float: left;
   position: relative;
@@ -275,7 +292,7 @@
   text-align: center;
   font-size: 32px;
   color: #FFF;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 
 .eventsingle {
@@ -331,17 +348,20 @@
   color: #FFF;
 }
 
+.newsarchive.active {
+  background-color: #d3d3d3;
+  color: #FFF;
+}
+
 .newsarchiveall {
-  position: absolute;
-  float: left;
-  top: 616px;
-  width: 480px;
+
 }
 
 .newslist {
   position: relative;
   float: left;
-  width: 440px;
+  max-width: 440px;
+  width: 100%;
 }
 
 .newscontainer {
@@ -454,8 +474,10 @@
 
 .eventouter {
   float: left;
-  width: 470px;
+  max-width: 470px;
+  width: 100%;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 
@@ -481,13 +503,30 @@
 
 .navleft {
   position: relative;
-  float: left;
   left: 20px;
 }
 
 .navright {
   position: relative;
-  right: -60px;
+  right: 0px;
+}
+
+@media only screen and (max-width: 925px) {
+
+}
+
+@media only screen and (max-width: 815px) {
+
+  .regionwhite {
+    left: 50%;
+    margin-left: -215px;
+    padding-left: 0px;
+  }
+
+  .archiveall {
+    margin: 0 auto;
+  }
+
 }
 
 @media only screen and (max-width: 508px) {
@@ -501,6 +540,25 @@
   }
 }
 
+@media only screen and (max-width: 490px) {
+
+  .eventcontainertitle {
+    font-size: 19px;
+    left: -63px;
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+  .regionwhite {
+    left: 0%;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+
+}
+
 @media only screen and (max-width: 421px) {
 
   .nav {
@@ -511,4 +569,21 @@
     font-size: 14px;
     margin-left: 10px;
   }
+}
+
+@media only screen and (max-width: 343px) {
+
+  .archivetitle {
+    font-size: 21px;
+  }
+
+  .navleft2, .navright2 {
+    font-size: 35px;
+  }
+
+  .archiveouter {
+    max-width: 325px;
+    width: 100%;
+  }
+
 }
