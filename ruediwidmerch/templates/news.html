@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block news %}
-    <div class="eventouter">
-        <div class="eventinner">
-        {% regroup events by month as month_list %}
-        {% for month in month_list %}
+    <div class="eventall">
+        <div class="eventouter">
+            <div class="eventinner">
+            {% regroup events by month as month_list %}
+            {% for month in month_list %}
                 <div class="eventcontainer">
                     <div class="eventcontainertitle">
                         <div class="navleft">
@@ -16,32 +17,33 @@
                     </div>
                     {% for event in month.list %}
                         <div class="eventsingle">
-                                <div class="eventsingledate">
-                                    {{ event.date|date:"d F" }}
-                                </div>
-                                <div class="eventsingletitle">
-                                    <b>{{ event.title }}</b><br>
-                                    -----
-                                </div>
-                                <div class="eventsingledesc">
-                                    {{ event.text }}
-                                </div>
+                            <div class="eventsingledate">
+                                {{ event.date|date:"d F" }}
+                            </div>
+                            <div class="eventsingletitle">
+                                <b>{{ event.title }}</b><br>
+                                -----
+                            </div>
+                            <div class="eventsingledesc">
+                                {{ event.text }}
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
-        {% endfor %}
+            {% endfor %}
+            </div>
         </div>
-    </div>
 
-    <div class="newsarchiveall">
-        {% regroup newsall by year as year_list %}
-        {% for year in year_list %}
-            <a href="{% url 'ruediwidmerch.views.newsyear' year=year.grouper %}">
-                <div class="newsarchive">
+        <div class="newsarchiveall">
+            {% regroup newsall by year as year_list %}
+            {% for year in year_list %}
+                <a href="{% url 'ruediwidmerch.views.newsyear' year=year.grouper %}">
+                    <div class="newsarchive {% if year.grouper == currentyear %}active{% endif %}">
                         {{ year.grouper }}
-                </div>
-            </a>
-        {% endfor %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="newslist">
@@ -59,6 +61,9 @@
                     {{ news.text }}
                 </div>
                 <div class="newssingleimg">
+                {% for image in news.images.all %}
+                    <img src = "{{ image.image.url }}">
+                {% endfor %}
                 </div>
                 <hr class="hrnews">
             </div>
