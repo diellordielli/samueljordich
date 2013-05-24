@@ -9,7 +9,7 @@ from .portrait.models import Portrait
 
 
 def home(request):
-    cartoons = Cartoon.objects.all()
+    cartoons = Cartoon.objects.order_by('ordering')
     categories = Category.objects.all()
 
     return render(request, 'index.html', {
@@ -28,12 +28,24 @@ def column(request):
     })
 
 
+def single_column(request, id):
+    columns = Column.objects.order_by('-date')
+    newest = Column.objects.get(id=id)
+
+    return render(request, 'texte.html', {
+        'currentcolumn': column,
+        'columns': columns,
+        'newest': newest,
+    })
+
+
 def news(request):
     newss = News.objects.all()
     events = Event.objects.all()
 
     return render(request, 'news.html', {
         'newss': newss,
+        'newsall': newss,
         'events': events,
     })
 
@@ -44,6 +56,7 @@ def newsyear(request, year):
     events = Event.objects.all()
 
     return render(request, 'news.html', {
+        'currentyear': year,
         'newsall': newsall,
         'newss': newss,
         'events': events,
@@ -60,14 +73,4 @@ def portrait(request):
 
 def contact(request):
     return render(request, 'contact.html', {
-    })
-
-
-def single_column(request, id):
-    columns = Column.objects.order_by('-date')
-    newest = Column.objects.get(id=id)
-
-    return render(request, 'texte.html', {
-        'columns': columns,
-        'newest': newest,
     })

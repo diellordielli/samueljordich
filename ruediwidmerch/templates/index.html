@@ -11,12 +11,14 @@
                 {% endif %}
             </div>
         {% endfor %}
+
         {% for category in categories %}
             <div class="item category">
                 {{ category.name }}
             </div>
         {% endfor %}
     </div>
+    <!--
     {% for category1 in categories %}
         {% for cartoon in cartoons %}
             <div class="ggg">
@@ -27,4 +29,5 @@
             </div>
         {% endfor %}
     {% endfor %}
+-->
 {% endblock %}
