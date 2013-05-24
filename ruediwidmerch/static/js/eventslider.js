@@ -1,10 +1,33 @@
 var carouselOptions = {
-    speed: 400
+    speed: 400,
+    imageRatio: 1
 }
 
 $(document).ready(function() {
     // gets updated on resize and on page load
-    var totalWidth, totalElemnts, stepWidth, navpos = 0,
+    var totalWidth, totalElemnts, stepWidth, navpos = 0
+
+    resize();
+
+    $(window).resize(function() {
+        resize();
+    });
+
+    function resize() {
+        var regionGrey = $('.eventall').width(),
+            newsWidth = Math.round(regionGrey * carouselOptions.imageRatio),
+            eventSingle = $('.eventsingle').width();
+
+        $('.eventcontainer').width(newsWidth);
+
+        var eventSingleWidth = (newsWidth - 120);
+        $('.eventsingle').css('width', eventSingleWidth + 'px')
+
+        var marginleft = (regionGrey - newsWidth) / 2;
+        $('.eventcontainer').css('margin-left', marginleft + 'px');
+
+        var marginright = (regionGrey - newsWidth) / 2;
+        $('.eventcontainer').css('margin-right', marginright + 'px');
 
         // set superscope totalWidth
         stepWidth = $(".eventinner > .eventcontainer:first").outerWidth(true);
@@ -28,6 +51,8 @@ $(document).ready(function() {
         $('.eventinner').animate({'margin-left': newLeft}, carouselOptions.speed);
 
     });
+
+    }
 
     $('.navleft').on('click', function(event) {
         event.preventDefault();
