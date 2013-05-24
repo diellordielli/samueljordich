@@ -1,12 +1,30 @@
 var carouselOptions = {
     speed: 400,
-    imageRatio: 0.67,
+    imageRatio: 1,
     imageRatioH: 0.435
 }
 
 $(document).ready(function() {
     // gets updated on resize and on page load
-    var totalWidth, totalImages, stepWidth, navpos = 0,
+    var totalWidth, totalImages, stepWidth, navpos = 0
+
+    resize();
+
+    $(window).resize(function() {
+        resize();
+    });
+
+    function resize() {
+        var regionGrey = $('.archiveall').width(),
+            newsWidth = Math.round(regionGrey * carouselOptions.imageRatio);
+
+        $('.archivecontainer').width(newsWidth);
+
+        var marginleft = (regionGrey - newsWidth) / 2;
+        $('.archivecontainer').css('margin-left', marginleft + 'px');
+
+        var marginright = (regionGrey - newsWidth) / 2;
+        $('.archivecontainer').css('margin-right', marginright + 'px');
 
         // set superscope totalWidth
         stepWidth = $(".archiveinner > .archivecontainer:first").outerWidth(true);
@@ -16,6 +34,7 @@ $(document).ready(function() {
         $(".archiveinner").width(totalWidth);
 
         $('.archiveinner').css('margin-left', - navpos * stepWidth);
+    }
 
     $('.navright2').on('click', function(event) {
         event.preventDefault();
