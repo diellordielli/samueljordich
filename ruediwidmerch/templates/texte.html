@@ -19,7 +19,7 @@
                     </div>
                     {% for column in year.list %}
                     <a href={{ column.get_absolute_url }}>
-                        <div class="archivelist {% if column == currentcolumn %}active{% endif %}">
+                        <div class="archivelist {% if column.title == currentcolumn %}active{% endif %}">
                             <br>
                             <div class="texttitle">
                                 <b>{{ column.title }}</b><br>
@@ -36,19 +36,21 @@
             </div>
         </div>
     </div>
+<div class="regioncenter">
     <div class="regionwhite">
-            <div class="texttitle">
-                <p><b>{{ newest.title }}</b></p>
+        <div class="texttitle">
+            <p><b>{{ newest.title }}</b></p>
+        </div>
+        <div class="textsubtitle">
+            {{ newest.subtitle }}<br>
+            <b>---</b>
+            <div class="textdate">
+                <b>{{ newest.magazine }} vom {{ newest.date|date:"d b Y" }}</b>
             </div>
-            <div class="textsubtitle">
-                {{ newest.subtitle }}<br>
-                <b>---</b>
-                <div class="textdate">
-                    <b>{{ newest.magazine }} vom {{ newest.date|date:"d b Y" }}</b>
-                </div>
-            </div>
-            <div class="textcontent">
-                <p>{{ newest.text }}</p>
-            </div>
+        </div>
+        <div class="textcontent">
+            <p>{{ newest.text }}</p>
+        </div>
     </div>
+</div>
 {% endblock %}

@@ -30,34 +30,78 @@
 }
 
 .nav {
-    position: absolute;
+    position: relative;
     top: 80px;
     right: 0px;
-    width: 535px;
+    width: 560px;
+    margin-bottom: 100px;
 }
 
 .nav a {
-    margin-left: 40px;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
     color: #000;
 }
 
-.nav img {
+#cartoonimg {
   width: 100px;
-  height: 25px;
+  height: 40px;
+  background: url(../../static/img/navhover1.png);
+  display: inline-block;
 }
 
-#cartoonimg, #texteimg, #newsimg, #portraitimg, #kontaktimg {
-  display: none;
+#cartoonimg:hover {
+  background-position: 0px -55px;
 }
 
-#acartoon, #atexte, #anews, #aportrait, #akontakt {
-  display: inline;
+#texteimg {
+  width: 100px;
+  height: 40px;
+  background: url(../../static/img/navhover2.png);
+  display: inline-block;
 }
 
-#container {
-    top: 100px;
+#texteimg:hover {
+  background-position: 0px -60px;
+}
+
+#newsimg {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: url(../../static/img/navhover3.png);
+  display: inline-block;
+  top: 2px;
+}
+
+#newsimg:hover {
+  background-position: 0px -56px;
+}
+
+#portraitimg {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: url(../../static/img/navhover4.png);
+  display: inline-block;
+  top: 2px;
+}
+
+#portraitimg:hover {
+  background-position: 0px -53px;
+}
+
+#kontaktimg {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: url(../../static/img/navhover5.png);
+  display: inline-block;
+  top: 2px;
+}
+
+#kontaktimg:hover {
+  background-position: 0px -55px;
 }
 
 .item {
@@ -76,7 +120,8 @@
 }
 
 .item.image4-1, .item.image4-2, .item.image4-3, .item.image4-4, .item.image4-1 img, .item.image4-2 img, .item.image4-3 img, .item.image4-4 img {
-  width: 470px;
+  max-width: 470px;
+  width: 100%;
 }
 
 .item.image1-1, .item.image2-1, .item.image3-1, .item.image4-1, .item.image1-1 img, .item.image2-1 img, .item.image3-1 img, .item.image4-1 img {
@@ -92,17 +137,20 @@
 }
 
 .item.image1-4, .item.image2-4, .item.image3-4, .item.image4-4, .item.image1-4 img, .item.image2-4 img, .item.image3-4 img, .item.image4-4 img {
+  max-height: 470px;
   height: 470px;
 }
 
 .item.imagecorner {
   max-width: 470px;
   width: 100%;
+  background-color: #FFF;
 }
 
 .item.imagecorner img {
   max-width: 470px;
   width: 100%;
+  background-color: #FFF;
 }
 
 .item.portrait1-1, .item.portrait1-2, .item.portrait1-3, .item.portrait1-4, .item.portrait1-1 img, .item.portrait1-2 img, .item.portrait1-3 img, .item.portrait1-4 img {
@@ -194,7 +242,8 @@
 }
 
 .archivelist.active {
-  background-color: white;
+  background-color: #FFF;
+  color: #000;
 }
 
 .regionwhite {
@@ -330,6 +379,7 @@
 .newslist {
   position: relative;
   float: left;
+  top: 100px;
   max-width: 440px;
   width: 100%;
 }
@@ -338,7 +388,6 @@
   float: left;
   position: relative;
   max-width: 410px;
-  top: 100px;
   width: 100%;
   height: auto;
   padding-left: 30px;
@@ -482,21 +531,61 @@
 }
 
 @media only screen and (max-width: 925px) {
-
+  .eventall {
+    position: relative;
+    left: 23%;
+  }  
 }
 
 @media only screen and (max-width: 815px) {
-
-  .regionwhite {
-    left: 50%;
-    margin-left: -215px;
-    padding-left: 0px;
-  }
 
   .archiveall {
     margin: 0 auto;
   }
 
+  .regionwhite {
+    padding-left: 0px;
+    left: 23%;
+
+  }
+
+  .eventall {
+    left: 18%;
+  }
+}
+
+@media only screen and (max-width: 694px) {
+
+  .regionwhite {
+    left: 18%;
+    
+  }
+
+  .eventall {
+    left: 12%;
+  }
+}
+
+@media only screen and (max-width: 598px) {
+
+  .regionwhite {
+    left: 11%; 
+  }
+
+  .eventall {
+    left: 8%;
+  }
+}
+
+@media only screen and (max-width: 529px) {
+
+  .regionwhite {
+    left: 5%; 
+  }
+
+  .eventall {
+    left: 0%;
+  }
 }
 
 @media only screen and (max-width: 508px) {
@@ -517,6 +606,9 @@
     left: -63px;
   }
 
+  .regionwhite {
+    left: 0%; 
+  }
 }
 
 @media only screen and (max-width: 450px) {
