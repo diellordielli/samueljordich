@@ -1,53 +1,29 @@
 $(document).ready(function() {
 
-    $('#acartoon').on('mouseover', function(event) {
-        $('#acartoon a').hide();
-        $('#cartoonimg').css({'display':'inline'});
+    $('.navright2').on('click', function(event) {
+        $('navleft2').parent().css('background-color', 'red');
     });
 
-    $('#cartoonimg').on('mouseleave', function(event) {
-        $('#cartoonimg').hide();
-        $('#acartoon a').css({'display':'inline'});
+    $('.navright2').on('click', function(event) {
+        var currentHeight,
+            newsindex = $('.archiveouter').data('textindex'),
+            $currentColumn = $('.archivecontainer').eq(newsindex);
+
+        currentHeight = $currentColumn.outerHeight();
+
+        //$('.archiveouter').animate({'height': currentHeight});
+
     });
 
-    $('#atexte').on('mouseover', function(event) {
-        $('#atexte a').hide();
-        $('#texteimg').css({'display':'inline'});
-    });
+    $('.navleft2').on('click', function(event) {
+        var currentHeight,
+            newsindex = $('.archiveouter').data('textindex'),
+            $currentColumn = $('.archivecontainer').eq(newsindex);
 
-    $('#texteimg').on('mouseleave', function(event) {
-        $('#texteimg').hide();
-        $('#atexte a').css({'display':'inline'});
-    });
+        currentHeight = $currentColumn.outerHeight();
 
-    $('#anews').on('mouseover', function(event) {
-        $('#anews a').hide();
-        $('#newsimg').css({'display':'inline'});
-    });
+        //$('.archiveouter').animate({'height': currentHeight});
 
-    $('#newsimg').on('mouseleave', function(event) {
-        $('#newsimg').hide();
-        $('#anews a').css({'display':'inline'});
-    });
-
-    $('#aportrait').on('mouseover', function(event) {
-        $('#aportrait a').hide();
-        $('#portraitimg').css({'display':'inline'});
-    });
-
-    $('#portraitimg').on('mouseleave', function(event) {
-        $('#portraitimg').hide();
-        $('#aportrait a').css({'display':'inline'});
-    });
-
-    $('#akontakt').on('mouseover', function(event) {
-        $('#akontakt a').hide();
-        $('#kontaktimg').css({'display':'inline'});
-    });
-
-    $('#kontaktimg').on('mouseleave', function(event) {
-        $('#kontaktimg').hide();
-        $('#akontakt a').css({'display':'inline'});
     });
 
 });

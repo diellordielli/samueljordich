@@ -7,6 +7,7 @@ var carouselOptions = {
 $(document).ready(function() {
     // gets updated on resize and on page load
     var totalWidth, totalImages, stepWidth, navpos = 0
+        $archiveouter = $('.archiveouter');
 
     resize();
 
@@ -35,6 +36,12 @@ $(document).ready(function() {
 
         $('.archiveinner').css('margin-left', - navpos * stepWidth);
     }
+
+    for (var i = 1; i < totalImages; i++){
+        $archiveouter.clone().data('textindex', i); 
+    }
+
+    $archiveouter.addClass('active');
 
     $('.navright2').on('click', function(event) {
         event.preventDefault();
