@@ -22,7 +22,7 @@ class News(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField()
     date = models.DateTimeField()
-    featured = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False, unique=True)
     images = models.ManyToManyField(Cartoon, related_name="news", blank=True)
 
     class Meta:
