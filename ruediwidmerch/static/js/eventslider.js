@@ -47,7 +47,10 @@ $(document).ready(function() {
         }
 
         navpos = -newLeft / stepWidth;
+        
+        var nextContainerHeight = $(".eventcontainer").eq(navpos).outerHeight();
 
+        $('.eventouter').animate({'height': nextContainerHeight});
         $('.eventinner').animate({'margin-left': newLeft}, carouselOptions.speed);
 
     });
@@ -64,6 +67,9 @@ $(document).ready(function() {
 
         navpos = -newLeft / stepWidth;
 
+        var nextContainerHeight = $(".eventcontainer").eq(navpos).outerHeight();
+
+        $('.eventouter').animate({'height': nextContainerHeight});
         $('.eventinner').animate({'margin-left': newLeft}, carouselOptions.speed);
     });
 
