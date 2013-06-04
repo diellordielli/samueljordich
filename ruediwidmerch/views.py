@@ -11,10 +11,12 @@ from .portrait.models import Portrait
 def home(request):
     cartoons = Cartoon.objects.order_by('ordering')
     categories = Category.objects.all()
+    featured = News.objects.filter(featured=True)
 
     return render(request, 'index.html', {
         'cartoons': cartoons,
         'categories': categories,
+        'featured': featured,
     })
 
 

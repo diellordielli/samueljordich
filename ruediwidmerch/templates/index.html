@@ -10,6 +10,13 @@
 {% endblock %}
 {% block cartoons %}
     <div id="container">
+
+        <div class="item image4-4">
+            {% for featured in featured %}
+                {{ featured.title }}<br>
+                <img src = "{{ featured.image.url }}">
+            {% endfor %}
+        </div>
         {% for cartoon in cartoons %}
 
             <div class="item image{{ cartoon.width }}-{{ cartoon.height }}">
