@@ -637,15 +637,34 @@
 
 @media only screen and (max-width: 473px) {
 
-.nav {
-  width: auto;
-}
+  .nav {
+    width: auto;
+  }
 
-#cartoonimg, #texteimg, #newsimg, #portraitimg, #kontaktimg {
-  background-size: 68px;
-  width: 68px;
-}
+  #cartoonimg, #texteimg, #newsimg, #portraitimg, #kontaktimg {
+    background-size: 68px;
+    width: 68px;
+  }
 
+  #cartoonimg:hover {
+    background-position: -3px -35px;
+  }
+
+  #texteimg:hover {
+    background-position: 3px -40px;
+  }
+
+  #newsimg:hover {
+    background-position: 0px -38px;
+  }
+
+  #portraitimg:hover {
+    background-position: 0px -36px;
+  }
+
+  #kontaktimg:hover {
+    background-position: 7px -38px;
+  }
 }
 
 @media only screen and (max-width: 450px) {
