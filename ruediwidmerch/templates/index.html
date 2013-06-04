@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% block nav_cartoon %}
+    <div class="nav">
+        <a href="/"><div id="cartoonimgactive"></div></a>
+        <a href="/column"><div id="texteimg"></div></a>
+        <a href="/news"><div id="newsimg"></div></a>
+        <a href="/portrait"><div id="portraitimg"></div></a>
+        <a href="/contact"><div id="kontaktimg"></div></a>
+    </div>
+{% endblock %}
 {% block cartoons %}
     <div id="container">
         {% for cartoon in cartoons %}

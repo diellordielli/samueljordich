@@ -25,13 +25,8 @@
                 <img src="{{ STATIC_URL }}img/Twitter.jpg" />
             </a>            
         </div>
-        <div class="nav">
-            <a href="/"><div id="cartoonimg"></div></a>
-            <a href="/column"><div id="texteimg"></div></a>
-            <a href="/news"><div id="newsimg"></div></a>
-            <a href="/portrait"><div id="portraitimg"></div></a>
-            <a href="/contact"><div id="kontaktimg"></div></a>
-        </div>
+        {% block nav_cartoon %}
+        {% endblock %}
         {% block cartoons %}
         {% endblock %}
         {% block text %}

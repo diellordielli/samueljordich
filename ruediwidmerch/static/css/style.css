@@ -43,7 +43,7 @@
     color: #000;
 }
 
-#cartoonimg {
+#cartoonimg, #cartoonimgactive {
   width: 100px;
   height: 40px;
   background: url(../../static/img/navhover1.png);
@@ -51,11 +51,11 @@
   background-repeat: no-repeat;
 }
 
-#cartoonimg:hover {
+#cartoonimg:hover, #cartoonimgactive {
   background-position: 0px -55px;
 }
 
-#texteimg {
+#texteimg, #texteimgactive {
   width: 100px;
   height: 40px;
   background: url(../../static/img/navhover2.png);
@@ -63,11 +63,11 @@
   background-repeat: no-repeat;
 }
 
-#texteimg:hover {
+#texteimg:hover, #texteimgactive {
   background-position: 0px -60px;
 }
 
-#newsimg {
+#newsimg, #newsimgactive {
   position: relative;
   width: 100px;
   height: 40px;
@@ -77,11 +77,11 @@
   background-repeat: no-repeat;
 }
 
-#newsimg:hover {
+#newsimg:hover, #newsimgactive {
   background-position: 0px -56px;
 }
 
-#portraitimg {
+#portraitimg, #portraitimgactive {
   position: relative;
   width: 100px;
   height: 40px;
@@ -91,11 +91,11 @@
   background-repeat: no-repeat;
 }
 
-#portraitimg:hover {
+#portraitimg:hover, #portraitimgactive {
   background-position: 0px -53px;
 }
 
-#kontaktimg {
+#kontaktimg, #kontaktimgactive {
   position: relative;
   width: 100px;
   height: 40px;
@@ -105,7 +105,7 @@
   background-repeat: no-repeat;
 }
 
-#kontaktimg:hover {
+#kontaktimg:hover, #kontaktimgactive {
   background-position: 0px -55px;
 }
 
@@ -668,23 +668,28 @@
     width: 68px;
   }
 
-  #cartoonimg:hover {
+  #cartoonimgactive, #texteimgactive, #newsimgactive, #portraitimgactive, #kontaktimgactive {
+    background-size: 68px;
+    width: 68px;
+  }
+
+  #cartoonimg:hover, #cartoonimgactive {
     background-position: -3px -35px;
   }
 
-  #texteimg:hover {
+  #texteimg:hover,#texteimgactive {
     background-position: 3px -40px;
   }
 
-  #newsimg:hover {
+  #newsimg:hover, #newsimgactive {
     background-position: 0px -38px;
   }
 
-  #portraitimg:hover {
+  #portraitimg:hover, #portraitimgactive {
     background-position: 0px -36px;
   }
 
-  #kontaktimg:hover {
+  #kontaktimg:hover, #kontaktimgactive {
     background-position: 7px -38px;
   }
 }
