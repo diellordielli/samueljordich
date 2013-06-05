@@ -10,15 +10,17 @@
 {% endblock %}
 {% block cartoons %}
     <div id="container">
-
-        <div class="item image4-4">
-            {% for featured in featured %}
-                {{ featured.title }}<br>
-                <img src = "{{ featured.image.url }}">
-            {% endfor %}
-        </div>
+        {% if featured.first_image %}
+        <a href="/news">
+            <div class="item image4-4">
+                    <img src = "{{ featured.first_image.image.url }}" height="{{ featured.first_image.image.height }}" width="{{ featured.first_image.image.width }}">
+                <div class="supernews">
+                    <img src="{{ STATIC_URL }}img/superpost.png" />
+                </div>
+            </div>
+        </a>
+        {% endif %}
         {% for cartoon in cartoons %}
-
             <div class="item image{{ cartoon.width }}-{{ cartoon.height }}">
                 {% if cartoon.image %}
                 <a class="fancybox" rel="group" href="{{ cartoon.image.url }}">
