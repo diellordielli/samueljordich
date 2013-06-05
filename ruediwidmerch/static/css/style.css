@@ -207,6 +207,14 @@
   top: 100px;
 }
 
+.supernews {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0px;
+  right: 0px;
+}
+
 .corner-stamp {
   float: right;
   margin-top: 100px;
