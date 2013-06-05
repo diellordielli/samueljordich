@@ -3,6 +3,11 @@ var carouselOptions = {
     imageRatio: 1
 }
 
+$(window).load(function() {
+    var eventHeight = $('.eventcontainer').outerHeight();
+    $('.eventouter').height(eventHeight);
+});
+
 $(document).ready(function() {
     // gets updated on resize and on page load
     var totalWidth, totalElemnts, stepWidth, navpos = 0

@@ -4,6 +4,11 @@ var carouselOptions = {
     imageRatioH: 0.435
 }
 
+$(window).load(function() {
+    var columnHeight = $('.archivecontainer').outerHeight();
+    $('.archiveouter').outerHeight(columnHeight);
+});
+
 $(document).ready(function() {
     // gets updated on resize and on page load
     var totalWidth, totalImages, stepWidth, navpos = 0,
@@ -14,6 +19,7 @@ $(document).ready(function() {
     $(window).resize(function() {
         resize();
     });
+
 
     function resize() {
         var regionGrey = $('.archiveall').width(),
