@@ -11,7 +11,11 @@ from .portrait.models import Portrait
 def home(request):
     cartoons = Cartoon.objects.order_by('ordering')
     categories = Category.objects.all()
-    featured = News.objects.filter(featured=True)
+
+    try:
+        featured = News.objects.get(featured=True)
+    except News.DoesNotExist:
+        featured = None
 
     return render(request, 'index.html', {
         'cartoons': cartoons,
@@ -35,7 +39,6 @@ def single_column(request, id):
     newest = Column.objects.get(id=id)
 
     return render(request, 'texte.html', {
-        'currentcolumn': column,
         'columns': columns,
         'newest': newest,
     })
