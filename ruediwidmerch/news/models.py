@@ -22,15 +22,26 @@ class News(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField()
     date = models.DateTimeField()
-    featured = models.BooleanField(default=False, unique=True)
+    featured = models.BooleanField(default=False)
     images = models.ManyToManyField(Cartoon, related_name="news", blank=True)
 
     class Meta:
         verbose_name_plural = "News"
         ordering = ['date']
 
+    def first_image(self):
+        try:
+            return self.images.all()[0]
+        except IndexError:
+            return None
+
     def year(self):
         return self.date.strftime('%Y')
 
     def __unicode__(self):
         return u"%s %s" % (self.title, self.text)
+
+    def clean(self):
+        if self.featured:
+            News.objects.update(featured=False)
+            self.featured = True
