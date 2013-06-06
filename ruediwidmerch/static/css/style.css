@@ -215,8 +215,17 @@
   position: absolute;
   width: 100px;
   height: 100px;
+}
+
+.supernews2 {
+  position: absolute;
   top: 0px;
   right: 0px;
+}
+
+.supernews2 img {
+  width: 75px;
+  height: 75px;
 }
 
 .corner-stamp {

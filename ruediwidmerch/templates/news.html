@@ -64,13 +64,16 @@
                 <div class="newssingledate">
                     {{ featured.date|date:"d.m.Y" }}
                 </div>
+                <div class="supernews2">
+                    <img src="{{ STATIC_URL }}img/superpost.png" />
+                </div>
                 <div class="newssingledesc">
                     {{ featured.text }}
                 </div>
                 <div class="newssingleimg">
-                {% if featured.first_image %}
-                    <img src = "{{ featured.first_image.image.url }}">
-                {% endif %}
+                    {% if featured.first_image %}
+                        <img src = "{{ featured.first_image.image.url }}">
+                    {% endif %}
                 </div>
                 <hr class="hrnews">
             </div>
