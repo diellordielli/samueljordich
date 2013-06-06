@@ -45,13 +45,18 @@ def single_column(request, id):
 
 
 def news(request):
-    newss = News.objects.all()
+    newss = News.objects.filter(featured=False)
     events = Event.objects.all()
+    try:
+        featured = News.objects.get(featured=True)
+    except News.DoesNotExist:
+        featured = None
 
     return render(request, 'news.html', {
         'newss': newss,
         'newsall': newss,
         'events': events,
+        'featured': featured,
     })
 
 
