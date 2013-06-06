@@ -157,6 +157,10 @@
   background-color: #FFF;
 }
 
+.item.portrait {
+  cursor: pointer;
+}
+
 .item.portrait1-1, .item.portrait1-2, .item.portrait1-3, .item.portrait1-4, .item.portrait1-1 img, .item.portrait1-2 img, .item.portrait1-3 img, .item.portrait1-4 img {
   width: 110px;
 }
