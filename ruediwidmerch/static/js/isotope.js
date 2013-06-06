@@ -20,4 +20,13 @@ $(function(){
         $container.isotope( 'reLayout' )
 
     });
+
+    $('.item.category').click(function(){
+        var $this = $(this);
+        console.log($this);
+    });
+
+    $('.item.category.titanic').click(function(){
+        $('#container').isotope({ filter: '.item.titanic' });
+    });
 });

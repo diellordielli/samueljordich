@@ -21,7 +21,7 @@
         </a>
         {% endif %}
         {% for cartoon in cartoons %}
-            <div class="item image{{ cartoon.width }}-{{ cartoon.height }}">
+            <div class="item image{{ cartoon.width }}-{{ cartoon.height }} {{ cartoon.category }}">
                 {% if cartoon.image %}
                 <a class="fancybox" rel="group" href="{{ cartoon.image.url }}">
                     <img src = "{{ cartoon.image.url }}">
@@ -31,7 +31,7 @@
         {% endfor %}
 
         {% for category in categories %}
-            <div class="item category">
+            <div class="item category {{ category.name }}">
                 {{ category.name }}
             </div>
         {% endfor %}
