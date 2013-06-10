@@ -55,29 +55,31 @@
         </div>
     </div>
     <div class="newslist">
-        <div class="newscontainer">
-            <div class="newssingle">
-                <div class="newssingletitle">
-                    <b>{{ featured.title }}</b><br>
-                    -----
+        {% if featured %}
+            <div class="newscontainer">
+                <div class="newssingle">
+                    <div class="newssingletitle">
+                        <b>{{ featured.title }}</b><br>
+                        -----
+                    </div>
+                    <div class="newssingledate">
+                        {{ featured.date|date:"d.m.Y" }}
+                    </div>
+                    <div class="supernews2">
+                        <img src="{{ STATIC_URL }}img/superpost.png" />
+                    </div>
+                    <div class="newssingledesc">
+                        {{ featured.text }}
+                    </div>
+                    <div class="newssingleimg">
+                        {% if featured.first_image %}
+                            <img src = "{{ featured.first_image.image.url }}">
+                        {% endif %}
+                    </div>
+                    <hr class="hrnews">
                 </div>
-                <div class="newssingledate">
-                    {{ featured.date|date:"d.m.Y" }}
-                </div>
-                <div class="supernews2">
-                    <img src="{{ STATIC_URL }}img/superpost.png" />
-                </div>
-                <div class="newssingledesc">
-                    {{ featured.text }}
-                </div>
-                <div class="newssingleimg">
-                    {% if featured.first_image %}
-                        <img src = "{{ featured.first_image.image.url }}">
-                    {% endif %}
-                </div>
-                <hr class="hrnews">
             </div>
-        </div>
+        {% endif %}
         {% for news in newss %}
         <div class="newscontainer">
             <div class="newssingle">

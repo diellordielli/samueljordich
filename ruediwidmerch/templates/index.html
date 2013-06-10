@@ -15,7 +15,7 @@
             <div class="item image4-4">
                     <img src = "{{ featured.first_image.image.url }}" height="{{ featured.first_image.image.height }}" width="{{ featured.first_image.image.width }}">
                 <div class="supernews">
-                    <img src="{{ STATIC_URL }}img/superpost.png" />
+                    <img src="{{ STATIC_URL }}img/superpost.png" height="100px" width="200px"/>
                 </div>
             </div>
         </a>
@@ -31,7 +31,7 @@
         {% endfor %}
 
         {% for category in categories %}
-            <div class="item category {{ category.name }}">
+            <div class="item category {{ category.name }}" title="{{ category.name }}">
                 {{ category.name }}
             </div>
         {% endfor %}

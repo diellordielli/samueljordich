@@ -22,11 +22,7 @@ $(function(){
     });
 
     $('.item.category').click(function(){
-        var $this = $(this);
-        console.log($this);
-    });
-
-    $('.item.category.titanic').click(function(){
-        $('#container').isotope({ filter: '.item.titanic' });
+        var category = $(this).attr('title');
+        $('#container').isotope({ filter: "." + category });
     });
 });

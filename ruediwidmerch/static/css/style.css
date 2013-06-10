@@ -142,7 +142,7 @@
 }
 
 .item.image1-4, .item.image2-4, .item.image3-4, .item.image4-4, .item.image1-4 img, .item.image2-4 img, .item.image3-4 img, .item.image4-4 img {
-  max-height: 470px;
+  height: 470px;
 }
 
 .item.imagecorner {
@@ -719,6 +719,13 @@
   }
 }
 
+@media only screen and (max-width: 470px) {
+
+  .item.image1-4, .item.image2-4, .item.image3-4, .item.image4-4, .item.image1-4 img, .item.image2-4 img, .item.image3-4 img, .item.image4-4 img {
+    max-height: 470px;
+    height: auto;
+  }
+}
 @media only screen and (max-width: 450px) {
 
   .regionwhite {
