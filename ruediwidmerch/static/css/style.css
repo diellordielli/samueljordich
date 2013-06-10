@@ -113,7 +113,7 @@
     width: 190px;
     margin: 5px;
     float: left;
-    background-color: #DADBDC;
+    cursor: pointer;
 }
 
 .item.image1-1, .item.image1-2, .item.image1-3, .item.image1-4, .item.image1-1 img, .item.image1-2 img, .item.image1-3 img, .item.image1-4 img {
@@ -158,6 +158,7 @@
 }
 
 .item.portrait {
+  background-color: #DADBDC;
   cursor: pointer;
 }
 
@@ -198,6 +199,7 @@
   text-transform: uppercase;
   color: #FFF;
   background-color: #000;
+  cursor: pointer;
 }
 /*
 .item.portrait {
