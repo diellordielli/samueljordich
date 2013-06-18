@@ -6,12 +6,30 @@
     margin-left: auto;
     margin-right: auto;
     height: auto;
-    font-family:'Andale$MonoW01-Regular';
+    font-family:'Vialog LT W01 Light';
     background-color: #FFF;
 }
 
+h4 {
+  text-transform: uppercase;
+}
+
+#title {
+  font-size: 60px;
+  font-family:'Vialog LT W01 Light';
+  font-weight: bold;
+}
+
+#title a {
+  text-decoration: none;
+  color: #000;
+}
+
 #title img {
-    width: 270px;
+  position: relative;
+  width: 70px;
+  top: 6px;
+  left: -10px;
 }
 
 #hr {
@@ -41,72 +59,65 @@
     font-size: 15px;
     text-decoration: none;
     color: #000;
+    margin-left: 35px;
+    font-family:'Vialog LT W01 Light';
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-#cartoonimg, #cartoonimgactive {
-  width: 100px;
-  height: 40px;
-  background: url(../../static/img/navhover1.png);
-  display: inline-block;
-  background-repeat: no-repeat;
-}
-
-#cartoonimg:hover, #cartoonimgactive {
-  background-position: 0px -55px;
-}
-
-#texteimg, #texteimgactive {
-  width: 100px;
-  height: 40px;
-  background: url(../../static/img/navhover2.png);
-  display: inline-block;
-  background-repeat: no-repeat;
-}
-
-#texteimg:hover, #texteimgactive {
-  background-position: 0px -60px;
-}
-
-#newsimg, #newsimgactive {
+#illuimg, #illuimgactive {
   position: relative;
-  width: 100px;
-  height: 40px;
-  background: url(../../static/img/navhover3.png);
   display: inline-block;
-  top: 2px;
-  background-repeat: no-repeat;
+  text-transform: uppercase;
 }
 
-#newsimg:hover, #newsimgactive {
-  background-position: 0px -56px;
+#illuimg:hover, #illuimgactive {
+  color: #D3D3D3;
+  font-weight: bold;
+}
+
+#grafikimg, #grafikimgactive {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+#grafikimg:hover, #grafikimgactive {
+  color: #D3D3D3;
+  font-weight: bold;
+}
+
+#aktuellimg, #aktuellimgactive {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+#aktuellimg:hover, #aktuellimgactive {
+  color: #D3D3D3;
+  font-weight: bold;
 }
 
 #portraitimg, #portraitimgactive {
   position: relative;
-  width: 100px;
-  height: 40px;
-  background: url(../../static/img/navhover4.png);
   display: inline-block;
-  top: 2px;
-  background-repeat: no-repeat;
+  text-transform: uppercase;
 }
 
 #portraitimg:hover, #portraitimgactive {
-  background-position: 0px -53px;
+  color: #D3D3D3;
+  font-weight: bold;
 }
 
 #kontaktimg, #kontaktimgactive {
   position: relative;
-  width: 100px;
-  height: 40px;
-  background: url(../../static/img/navhover5.png);
   display: inline-block;
-  top: 2px;
-  background-repeat: no-repeat;
+  text-transform: uppercase;
 }
 
 #kontaktimg:hover, #kontaktimgactive {
-  background-position: 0px -55px;
+  color: #D3D3D3;
+  font-weight: bold;
 }
 
 .item {
@@ -129,26 +140,11 @@
   width: 100%;
 }
 
-.item.image1-1, .item.image2-1, .item.image3-1, .item.image4-1, .item.image1-1 img, .item.image2-1 img, .item.image3-1 img, .item.image4-1 img {
-  height: 110px;
-}
-
-.item.image1-2, .item.image2-2, .item.image3-2, .item.image4-2, .item.image1-2 img, .item.image2-2 img, .item.image3-2 img, .item.image4-2 img {
-  height: 230px;
-}
-
-.item.image1-3, .item.image2-3, .item.image3-3, .item.image4-3, .item.image1-3 img, .item.image2-3 img, .item.image3-3 img, .item.image4-3 img {
-  height: 340px;
-}
-
-.item.image1-4, .item.image2-4, .item.image3-4, .item.image4-4, .item.image1-4 img, .item.image2-4 img, .item.image3-4 img, .item.image4-4 img {
-  height: 470px;
-}
 
 .item.imagecorner {
   max-width: 470px;
   width: 100%;
-  background-color: #FFF;
+  background-color: #dcdcdc;
 }
 
 .item.imagecorner img {
@@ -191,14 +187,12 @@
 }
 
 .item.category {
-  padding-top: 30px;
   padding-left: 20px;
   width: 210px;
-  height: 200px;
   font-size: 35px;
   text-transform: uppercase;
   color: #FFF;
-  background-color: #000;
+  background-color: #dcdcdc;
   cursor: pointer;
 }
 /*
@@ -230,6 +224,21 @@
 .supernews2 img {
   width: 75px;
   height: 75px;
+}
+
+.imagetext {
+  position: relative;
+  width: 100%;
+  top: -45px;
+  padding-top: 5px;
+  background-color: #dcdcdc;
+  display: none;
+  text-transform: uppercase;
+}
+
+.fancybox {
+  text-decoration: none;
+  color: #000;
 }
 
 .corner-stamp {
@@ -295,12 +304,12 @@
   width: 100%;  
 }
 
-.texttitle {
-  text-transform: uppercase;
+.textcontent {
+  font-family:'Vialog LT W01 Light';
 }
 
-.textcontent {
-  text-align: justify;
+.texttitle {
+  text-transform: uppercase;
 }
 
 .contactcontainer {
@@ -313,6 +322,7 @@
   padding-top: 25px;
   padding-left: 20px;
   background-color: #DADBDC;
+  font-family:'Vialog LT W01 Light';
 }
 
 .contact {
@@ -323,7 +333,6 @@
   float: left;
   position: relative;
   margin-top: 100px;
-  max-width: 480px;
   width: 100%;
 }
 
@@ -376,24 +385,25 @@
 
 .eventsingledesc {
   font-size: 13px;
+  font-family:'Vialog LT W01 Light';
 }
 
 .newsarchive {
   float: left;
   position: relative;
   margin-right: 10px;
-  max-width: 110px;
+  max-width: 80px;
   width: 100%;
-  height: 100px;
+  height: 70px;
   padding-top: 10px;
   margin-bottom: 10px;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
   color: #FFF;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: #000;  
+  background-color: #d3d3d3;  
 }
 
 .newsarchive a {
@@ -402,36 +412,14 @@
 }
 
 .newsarchive.active {
-  background-color: #d3d3d3;
-  color: #FFF;
+  color: #000;
 }
 
 .newsarchiveall {
-  position: relative;
-  width: 100%;
-}
-
-.newslist {
-  position: relative;
-  float: left;
-  top: 100px;
-  padding-left: 30px;
-  max-width: 440px;
-  width: 100%;
-}
-
-.newscontainer {
-  float: left;
-  position: relative;
-  max-width: 410px;
-  width: 100%;
-  height: auto;
-  background-color: #FFF;  
-}
-
-.newssingle {
-  float: left;
-  position: relative;
+  position: fixed;
+  bottom: 0px;
+  width: 115px;
+  right: -27px;
 }
 
 .newssingletitle {
@@ -446,13 +434,36 @@
 
 .newssingledesc {
   margin-bottom: 20px;
+  font-family:'Vialog LT W01 Light';
+}
+
+.newssingleimg {
+  float: left;
+  width: 230px;
 }
 
 .newssingleimg img {
   width: 230px;
 }
 
+.newssingle {
+  position: relative;
+  margin-left: 280px;
+}
+
+.newscontainer {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.newslist {
+  position: relative;
+  top: 100px;
+}
+
 .hrnews {
+  position: relative;
+  width: 100%;
   border: none;
   border-top: 1px dashed black; 
   height: 1px;
@@ -487,7 +498,9 @@
   float: left;
   margin-left: 10px;
   display: none;
+  padding-right: 5px;
   padding-bottom: 20px;
+  font-family:'Vialog LT W01 Light';
 }
 
 .isotope,
@@ -567,15 +580,18 @@
   right: 0px;
 }
 
-@media only screen and (max-width: 926px) {
-  .eventall {
+@media only screen and (max-width: 930px) {
+  .newsarchiveall {
     position: relative;
-    left: 23%;
-  }  
+    max-width: 930px;
+    width: auto;
+    right: 0px;
+  }
 
-  .newslist {
-    padding-left: 0px;
-    left: 23%;
+  .newsarchive {
+    max-width: 80px;
+    height: 70px;
+    font-size: 22px;
   }
 }
 
@@ -590,14 +606,6 @@
     left: 23%;
 
   }
-
-  .eventall {
-    left: 18%;
-  }
-
-  .newslist {
-    left: 18%;
-  }
 }
 
 @media only screen and (max-width: 694px) {
@@ -606,14 +614,6 @@
     left: 18%;
     
   }
-
-  .eventall {
-    left: 12%;
-  }
-
-  .newslist {
-    left: 12%;
-  }
 }
 
 @media only screen and (max-width: 598px) {
@@ -621,27 +621,39 @@
   .regionwhite {
     left: 11%; 
   }
-
-  .eventall {
-    left: 8%;
-  }
-
-  .newslist {
-    left: 12%;
-  }
 }
 
 @media only screen and (max-width: 569px) {
 
-.nav {
-  width: auto;
-  right: 15px;
+  .nav {
+    width: auto;
+  }
 }
 
-.nav a {
-  margin-right: -20px;
+@media only screen and (max-width: 556px) {
+
+  .nav a {
+    margin-left: 15px;
+  }
 }
 
+@media only screen and (max-width: 550px) {
+
+  .newssingleimg {
+    float: none;
+    margin: 0 auto;
+  }
+
+  .newscontainer {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .newssingle {
+    max-width: 500px;
+    width: 100%;
+    margin-left: 0px;
+  }
 }
 
 @media only screen and (max-width: 529px) {
@@ -649,25 +661,10 @@
   .regionwhite {
     left: 5%; 
   }
-
-  .eventall {
-    left: 0%;
-  }
-
-  .newslist {
-    left: 0%;
-  }
 }
 
 @media only screen and (max-width: 508px) {
 
-  .nav {
-    width: 450px;
-  }
-
-  .nav a {
-    font-size: 14px;
-  }
 }
 
 @media only screen and (max-width: 490px) {
@@ -684,39 +681,11 @@
 
 @media only screen and (max-width: 473px) {
 
-  .nav {
-    width: auto;
+  .nav a {
+    font-size: 14px;
+    margin-left: 1px;
   }
 
-  #cartoonimg, #texteimg, #newsimg, #portraitimg, #kontaktimg {
-    background-size: 68px;
-    width: 68px;
-  }
-
-  #cartoonimgactive, #texteimgactive, #newsimgactive, #portraitimgactive, #kontaktimgactive {
-    background-size: 68px;
-    width: 68px;
-  }
-
-  #cartoonimg:hover, #cartoonimgactive {
-    background-position: -3px -35px;
-  }
-
-  #texteimg:hover,#texteimgactive {
-    background-position: 3px -40px;
-  }
-
-  #newsimg:hover, #newsimgactive {
-    background-position: 0px -38px;
-  }
-
-  #portraitimg:hover, #portraitimgactive {
-    background-position: 0px -36px;
-  }
-
-  #kontaktimg:hover, #kontaktimgactive {
-    background-position: 7px -38px;
-  }
 }
 
 @media only screen and (max-width: 470px) {
@@ -726,12 +695,34 @@
     height: auto;
   }
 }
+
 @media only screen and (max-width: 450px) {
 
   .regionwhite {
     left: 0%;
     margin-left: 0px;
     padding-left: 0px;
+  }
+
+}
+
+@media only screen and (max-width: 382px) {
+
+  #title {
+    font-size: 43px;
+  }
+
+  #title img {
+    width: 55px;
+  }
+
+}
+
+@media only screen and (max-width: 360px) {
+
+  .nav a {
+    font-size: 12px;
+    margin-left: -2px;
   }
 
 }

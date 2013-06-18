@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-from ..cartoons.models import Cartoon
+from ..illustration.models import Illustration
 
 
 # Create your models here.
@@ -23,25 +23,14 @@ class News(models.Model):
     text = models.TextField()
     date = models.DateTimeField()
     featured = models.BooleanField(default=False)
-    images = models.ManyToManyField(Cartoon, related_name="news", blank=True)
+    images = models.ManyToManyField(Illustration, related_name="news", blank=True)
 
     class Meta:
         verbose_name_plural = "News"
-        ordering = ['date']
-
-    def first_image(self):
-        try:
-            return self.images.all()[0]
-        except IndexError:
-            return None
+        ordering = ['-date']
 
     def year(self):
         return self.date.strftime('%Y')
 
     def __unicode__(self):
         return u"%s %s" % (self.title, self.text)
-
-    def clean(self):
-        if self.featured:
-            News.objects.update(featured=False)
-            self.featured = True

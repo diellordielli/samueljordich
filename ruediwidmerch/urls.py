@@ -15,17 +15,14 @@ urlpatterns = patterns('',
     # Home
     url(r'^$', 'ruediwidmerch.views.home', name='home'),
 
-    # Texte
-    url(r'^column/$', 'ruediwidmerch.views.column', name='column'),
-
-    # Textdetail
-    url(r'^column/(?P<id>\d+)/$', 'ruediwidmerch.views.single_column', name='single_column'),
+    # Grafik
+    url(r'^grafik/$', 'ruediwidmerch.views.grafik', name='grafik'),
 
     # News
-    url(r'^news/$', 'ruediwidmerch.views.news', name='news'),
+    url(r'^aktuell/$', 'ruediwidmerch.views.news', name='news'),
 
     # News Year
-    url(r'^news/(?P<year>\d{4})/$', 'ruediwidmerch.views.newsyear', name='newsyear'),
+    url(r'^aktuell/(?P<year>\d{4})/$', 'ruediwidmerch.views.newsyear', name='newsyear'),
 
     # Portrait
     url(r'^portrait/$', 'ruediwidmerch.views.portrait', name='portrait'),

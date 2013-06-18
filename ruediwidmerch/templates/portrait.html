@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block nav_cartoon %}
     <div class="nav">
-        <a href="/"><div id="cartoonimg"></div></a>
-        <a href="/column"><div id="texteimg"></div></a>
-        <a href="/news"><div id="newsimg"></div></a>
-        <a href="/portrait"><div id="portraitimgactive"></div></a>
-        <a href="/contact"><div id="kontaktimg"></div></a>
+        <a href="/"><div id="illuimg">Illustration</div></a>
+        <a href="/grafik"><div id="grafikimg">Grafik</div></a>
+        <a href="/aktuell"><div id="aktuellimg">Aktuell</div></a>
+        <a href="/portrait"><div id="portraitimgactive">Portrait</div></a>
+        <a href="/contact"><div id="kontaktimg">Kontakt</div></a>
     </div>
 {% endblock %}
 {% block portrait %}
     <div id="container">
         <div class="item imagecorner">
-            <img src="{{ STATIC_URL }}img/ruedi.png" />
+            <img src="{{ STATIC_URL }}img/jordi.jpg" />
         </div>
         {% for portrait in portraits %}
             <div class="portrait">

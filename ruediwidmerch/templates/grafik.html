@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block nav_cartoon %}
     <div class="nav">
-        <a href="/"><div id="illuimgactive">Illustration</div></a>
-        <a href="/grafik"><div id="grafikimg">Grafik</div></a>
+        <a href="/"><div id="illuimg">Illustration</div></a>
+        <a href="/grafik"><div id="grafikimgactive">Grafik</div></a>
         <a href="/aktuell"><div id="aktuellimg">Aktuell</div></a>
         <a href="/portrait"><div id="portraitimg">Portrait</div></a>
         <a href="/contact"><div id="kontaktimg">Kontakt</div></a>
     </div>
 {% endblock %}
-{% block cartoons %}
+{% block grafik %}
     <div id="container">
         {% for cartoon in cartoons %}
             <div class="item image{{ cartoon.width }}-{{ cartoon.height }} {{ cartoon.category }}">

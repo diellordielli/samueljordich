@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block nav_cartoon %}
+    <div class="nav">
+        <a href="/"><div id="illuimg">Illustration</div></a>
+        <a href="/grafik"><div id="grafikimg">Grafik</div></a>
+        <a href="/aktuell"><div id="aktuellimgactive">Aktuell</div></a>
+        <a href="/portrait"><div id="portraitimg">Portrait</div></a>
+        <a href="/contact"><div id="kontaktimg">Kontakt</div></a>
+    </div>
+{% endblock %}
+{% block news %}
+    <div class="newslist">
+        {% for news in newss %}
+        <div class="newscontainer">
+            <div class="newssingleimg">
+                {% for image in news.images.all %}
+                    <img src = "{{ image.image.url }}">
+                {% endfor %}
+            </div>
+            <div class="newssingle">
+                <div class="newssingletitle">
+                    <b>{{ news.title }}</b><br>
+                    -----
+                </div>
+                <div class="newssingledate">
+                    {{ news.date|date:"d.m.Y" }}
+                </div>
+                <div class="newssingledesc">
+                    {{ news.text }}
+                </div>
+            </div>
+            <hr class="hrnews">
+        </div>
+        {% endfor %}
+    </div>
+    <div class="eventall">
+        <div class="newsarchiveall">
+            {% regroup newss by year as year_list %}
+            {% for year in year_list %}
+                <a href="{% url 'ruediwidmerch.views.newsyear' year=year.grouper %}">
+                    <div class="newsarchive {% if year.grouper == currentyear %}active{% endif %}">
+                        News
+                        {{ year.grouper }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

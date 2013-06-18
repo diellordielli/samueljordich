@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-from ..cartoons.models import Cartoon
+from ..illustration.models import Illustration
 
 
 # Create your models here.
@@ -24,7 +24,7 @@ class Portrait(models.Model):
     description = models.TextField()
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)
     height = models.CharField(max_length=20, choices=IMAGE_HEIGHT)
-    images = models.ManyToManyField(Cartoon, related_name="portraits", blank=True)
+    images = models.ManyToManyField(Illustration, related_name="portraits", blank=True)
 
     class Meta:
         verbose_name_plural = "Portraits"

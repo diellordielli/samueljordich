@@ -13,7 +13,7 @@ class Category(models.Model):
         return u"%s" % (self.name)
 
 
-class Cartoon(models.Model):
+class Illustration(models.Model):
     IMAGE_WIDTH = (
         ('1', '1'),
         ('2', '2'),
@@ -31,12 +31,12 @@ class Cartoon(models.Model):
     ordering = models.IntegerField()
     category = models.ForeignKey(Category, related_name="category", blank=True)
     date = models.DateTimeField()
-    image = models.ImageField(upload_to="cartoons")
+    image = models.ImageField(upload_to="illustration")
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)
     height = models.CharField(max_length=20, choices=IMAGE_HEIGHT)
 
     class Meta:
-        verbose_name_plural = "Cartoons"
+        verbose_name_plural = "Illustrationen"
 
     def __unicode__(self):
         return u"%s %s" % (self.image,  self.category)

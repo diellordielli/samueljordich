@@ -2,8 +2,8 @@ from . import models
 from django.contrib import admin
 
 
-class CartoonAdmin(admin.ModelAdmin):
-    model = models.Cartoon
+class IllustrationAdmin(admin.ModelAdmin):
+    model = models.Illustration
     list_display = ('ordering', 'category', 'date', 'image',)
     search_fields = ('ordering', 'category', 'image',)
     list_filter = ('ordering', 'category',)
@@ -15,5 +15,5 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_filter = ('name',)
 
-admin.site.register(models.Cartoon, CartoonAdmin)
+admin.site.register(models.Illustration, IllustrationAdmin)
 admin.site.register(models.Category, CategoryAdmin)

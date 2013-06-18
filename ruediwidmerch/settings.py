@@ -118,9 +118,8 @@ INSTALLED_APPS = (
     #'elephantblog',
 
     'ruediwidmerch',
-    'ruediwidmerch.cartoons',
-    'ruediwidmerch.column',
-    'ruediwidmerch.events',
+    'ruediwidmerch.illustration',
+    'ruediwidmerch.grafik',
     'ruediwidmerch.news',
     'ruediwidmerch.portrait',
 )
