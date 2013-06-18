@@ -106,7 +106,7 @@ INSTALLED_APPS = (
     'raven.contrib.django.raven_compat',
     'storages',
     'fhadmin',
-    'tinymce',
+    #'tinymce',
     'south',
     #'mptt',
 
