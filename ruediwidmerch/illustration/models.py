@@ -33,10 +33,14 @@ class Illustration(models.Model):
     date = models.DateTimeField()
     image = models.ImageField(upload_to="illustration")
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)
-    height = models.CharField(max_length=20, choices=IMAGE_HEIGHT)
+    height = models.CharField(max_length=20, choices=IMAGE_HEIGHT, blank=True)
 
     class Meta:
         verbose_name_plural = "Illustrationen"
 
     def __unicode__(self):
         return u"%s %s" % (self.image,  self.category)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('illustration_detail', (), {'id': self.id})

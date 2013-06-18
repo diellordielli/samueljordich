@@ -15,8 +15,14 @@ urlpatterns = patterns('',
     # Home
     url(r'^$', 'ruediwidmerch.views.home', name='home'),
 
+    # Illustration Detail
+    url(r'^illustration/(?P<id>\d+)/$', 'ruediwidmerch.views.illustration_detail', name='illustration_detail'),
+
     # Grafik
     url(r'^grafik/$', 'ruediwidmerch.views.grafik', name='grafik'),
+
+    # Grafik Detail
+    url(r'^grafik/(?P<id>\d+)/$', 'ruediwidmerch.views.grafik_detail', name='grafik_detail'),
 
     # News
     url(r'^aktuell/$', 'ruediwidmerch.views.news', name='news'),

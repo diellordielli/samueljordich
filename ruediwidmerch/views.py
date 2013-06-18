@@ -9,8 +9,14 @@ from .portrait.models import Portrait
 
 
 def home(request):
-    cartoons = Illustration.objects.order_by('ordering')
+    cartoons = list(Illustration.objects.order_by('ordering'))
     categories = Category.objects.all()
+    cat_x_car = len(cartoons) / categories.count()
+
+    for i in range(0, categories.count()):
+        cartoons.insert((i+1)*cat_x_car, categories[i])
+
+    print cartoons
 
     return render(request, 'index.html', {
         'cartoons': cartoons,
@@ -18,14 +24,38 @@ def home(request):
     })
 
 
+def illustration_detail(request, id):
+    cartoon = Illustration.objects.get(id=id)
+
+    if request.is_ajax():
+        return render(request, 'illustration_detail_ajax.html', {'cartoon': cartoon})
+    else:
+        return render(request, 'illustration_detail.html', {'cartoon': cartoon})
+
+
 def grafik(request):
-    cartoons = Grafik.objects.order_by('ordering')
+    cartoons = list(Grafik.objects.order_by('ordering'))
     categories = Categoryg.objects.all()
+    cat_x_car = len(cartoons) / categories.count()
+
+    for i in range(0, categories.count()):
+        cartoons.insert((i+1)*cat_x_car, categories[i])
+
+    print cartoons
 
     return render(request, 'grafik.html', {
         'cartoons': cartoons,
         'categories': categories,
     })
+
+
+def grafik_detail(request, id):
+    cartoon = Grafik.objects.get(id=id)
+
+    if request.is_ajax():
+        return render(request, 'grafik_detail_ajax.html', {'cartoon': cartoon})
+    else:
+        return render(request, 'grafik_detail.html', {'cartoon': cartoon})
 
 
 def news(request):
