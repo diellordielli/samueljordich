@@ -113,7 +113,7 @@ INSTALLED_APPS = (
     #'feincms',
     #'feincms.module.page',
     #'feincms.module.medialibrary',
-    'feincms_oembed',
+    #'feincms_oembed',
 
     #'elephantblog',
 
