@@ -33,7 +33,7 @@ class Illustration(models.Model):
     date = models.DateTimeField()
     image = models.ImageField(upload_to="illustration")
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)
-    height = models.CharField(max_length=20, choices=IMAGE_HEIGHT, blank=True)
+    height = models.CharField(max_length=20, choices=IMAGE_HEIGHT)
 
     class Meta:
         verbose_name_plural = "Illustrationen"
