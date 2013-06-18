@@ -124,9 +124,9 @@ INSTALLED_APPS = (
     'ruediwidmerch.portrait',
 )
 
-from memcacheify import memcacheify
+#from memcacheify import memcacheify
 
-CACHES = memcacheify()
+#CACHES = memcacheify()
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
