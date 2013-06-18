@@ -16,10 +16,10 @@
                     {% if cartoon.image %}
                     <a class="fancybox" href="{{ cartoon.get_absolute_url }}" rel="group">
                         <img src = "{{ cartoon.image.url }}">
-                    <div class="imagetext">
-                        <b>{{ cartoon.category }}</b></br>
-                        {{ cartoon.date|date:"d. F Y" }}
-                    </div>
+                        <div class="imagetext">
+                            <b>{{ cartoon.category }}</b></br>
+                            {{ cartoon.date|date:"d. F Y" }}
+                        </div>
                     </a>
                     {% endif %}
                 </div>
