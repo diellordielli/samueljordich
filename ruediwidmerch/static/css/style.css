@@ -580,14 +580,16 @@ h4 {
   right: 0px;
 }
 
-.cartoon_detail_ajax {
+.cartoon_detail_ajax img {
+  width: 100%;
   margin-top: 100px;
   width: auto;
 }
 
 .ajaxtext {
   font-family:'Vialog LT W01 Light';
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 930px) {
