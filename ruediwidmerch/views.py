@@ -63,6 +63,7 @@ def news(request):
 
     return render(request, 'aktuell.html', {
         'newss': newss,
+        'newsall': newss,
     })
 
 

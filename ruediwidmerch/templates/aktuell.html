@@ -35,7 +35,7 @@
     </div>
     <div class="eventall">
         <div class="newsarchiveall">
-            {% regroup newss by year as year_list %}
+            {% regroup newsall by year as year_list %}
             {% for year in year_list %}
                 <a href="{% url 'ruediwidmerch.views.newsyear' year=year.grouper %}">
                     <div class="newsarchive {% if year.grouper == currentyear %}active{% endif %}">

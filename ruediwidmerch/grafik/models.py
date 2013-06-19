@@ -12,6 +12,9 @@ class Categoryg(models.Model):
     def __unicode__(self):
         return u"%s" % (self.name)
 
+    def replace_dash(self):
+        return self.name.replace('-', '- ')
+
 
 class Grafik(models.Model):
     IMAGE_WIDTH = (

@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .page {
     position: relative;
     max-width: 960px;
@@ -8,6 +13,8 @@
     height: auto;
     font-family:'Vialog LT W01 Light';
     background-color: #FFF;
+
+    /*border-left: 1px solid red;*/
 }
 
 h4 {
@@ -17,7 +24,6 @@ h4 {
 #title {
   font-size: 60px;
   font-family:'Vialog LT W01 Light';
-  font-weight: bold;
 }
 
 #title a {
@@ -474,6 +480,8 @@ h4 {
 .portraittitle {
   font-size: 35px;
   font-weight: bold;
+  margin-left: 20px;
+  margin-top: 5px;
   color: #FFF;
 }
 
@@ -581,15 +589,17 @@ h4 {
 }
 
 .cartoon_detail_ajax img {
-  width: 100%;
+  max-width: 100%;
   margin-top: 100px;
+}
+
+iframe {
   width: auto;
 }
 
 .ajaxtext {
+  width: auto;
   font-family:'Vialog LT W01 Light';
-  max-width: 600px;
-  width: 100%;
 }
 
 @media only screen and (max-width: 930px) {
