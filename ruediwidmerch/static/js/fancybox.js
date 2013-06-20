@@ -1,27 +1,33 @@
 $(document).ready(function() {
-    /*$(".fancybox").fancybox({
-        type: 'ajax'
-    });*/
-
     $('.fancybox').on('click', function(event) {
         event.preventDefault();
 
         var $this = $(this);
+            activeFilter = $('#container').data('filter') || 'cartoon',
+            $group = $('.' + activeFilter + ' a');
 
-        // Get on screen image
-        var screenImage = $this.find('img');
+        $.fancybox($group, {
+            type: 'ajax',
+            index: $group.index(this),
+            autoSize: false,
+            afterLoad: function() {
+                var imgDimensions = getImageDimensions(this.element.find('img').attr('src'));
 
+                this.width = imgDimensions.width;
+            }
+        });
+       
+    });
+
+});
+
+function getImageDimensions(src) {
         // Create new offscreen image to test
         var theImage = new Image();
-        theImage.src = screenImage.attr("src");
+        theImage.src = src;
 
-        // Get accurate measurements from that.
-        var imageWidth = theImage.width;
-        var imageHeight = theImage.height;
-
-        console.log(imageWidth, imageHeight);
-
-        $.fancybox(this, {type: 'ajax'});
-        $.fancybox({'width': imageWidth, 'height': imageHeight});
-    });
-});
+        return {
+            width: theImage.width,
+            height: theImage.height
+        }
+}
