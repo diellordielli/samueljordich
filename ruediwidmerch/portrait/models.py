@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from tinymce.models import models
+
+from tinymce.models import HTMLField
 
 from ..illustration.models import Illustration
 
@@ -21,7 +24,7 @@ class Portrait(models.Model):
 
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=100, blank=True)
-    description = models.TextField()
+    description = HTMLField()
     width = models.CharField(max_length=20, choices=IMAGE_WIDTH)
     height = models.CharField(max_length=20, choices=IMAGE_HEIGHT)
     images = models.ManyToManyField(Illustration, related_name="portraits", blank=True)

@@ -32,6 +32,9 @@ urlpatterns = patterns('',
 
     # Kontakt
     url(r'^contact/$', 'ruediwidmerch.views.contact', name='contact'),
+
+    # django-tinymce
+    (r'^tinymce/', include('tinymce.urls')),
 )
 
 if settings.DEBUG:

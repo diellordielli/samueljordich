@@ -106,7 +106,7 @@ INSTALLED_APPS = (
     'raven.contrib.django.raven_compat',
     'storages',
     'fhadmin',
-    #'tinymce',
+    'tinymce',
     'south',
     #'mptt',
 
@@ -123,6 +123,14 @@ INSTALLED_APPS = (
     'ruediwidmerch.news',
     'ruediwidmerch.portrait',
 )
+
+TINYMCE_DEFAULT_CONFIG = {
+'theme': "advanced",
+'theme_advanced_toolbar_location': "top",
+'theme_advanced_buttons1': "bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo,link",
+'theme_advanced_buttons2': "",
+'theme_advanced_buttons3': "",
+}
 
 #from memcacheify import memcacheify
 
