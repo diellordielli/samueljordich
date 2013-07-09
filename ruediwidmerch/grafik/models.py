@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
+from tinymce.models import HTMLField
+
 
 # Create your models here.
 class Categoryg(models.Model):
@@ -30,7 +32,7 @@ class Grafik(models.Model):
         ('4', '4'),
     )
 
-    description = models.TextField(blank=True)
+    description = HTMLField()
     ordering = models.IntegerField()
     category = models.ForeignKey(Categoryg, related_name="category", blank=True)
     date = models.DateTimeField()

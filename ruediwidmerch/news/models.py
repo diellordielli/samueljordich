@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
+from tinymce.models import HTMLField
+
 from ..illustration.models import Illustration
 
 
@@ -20,7 +22,7 @@ class News(models.Model):
     )
 
     title = models.CharField(max_length=100)
-    text = models.TextField()
+    text = HTMLField()
     date = models.DateTimeField()
     featured = models.BooleanField(default=False)
     images = models.ManyToManyField(Illustration, related_name="news", blank=True)
