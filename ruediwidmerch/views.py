@@ -11,12 +11,9 @@ from .portrait.models import Portrait
 def home(request):
     cartoons = list(Illustration.objects.order_by('ordering'))
     categories = Category.objects.all()
-    cat_x_car = len(cartoons) / categories.count()
 
     for i in range(0, categories.count()):
-        cartoons.insert((i+1)*cat_x_car, categories[i])
-
-    print cartoons
+        cartoons.insert(5, categories[i])
 
     return render(request, 'index.html', {
         'cartoons': cartoons,
@@ -36,12 +33,9 @@ def illustration_detail(request, id):
 def grafik(request):
     cartoons = list(Grafik.objects.order_by('ordering'))
     categories = Categoryg.objects.all()
-    cat_x_car = len(cartoons) / categories.count()
 
     for i in range(0, categories.count()):
-        cartoons.insert((i+1)*cat_x_car, categories[i])
-
-    print cartoons
+        cartoons.insert(5, categories[i])
 
     return render(request, 'grafik.html', {
         'cartoons': cartoons,
