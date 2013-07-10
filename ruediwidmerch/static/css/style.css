@@ -131,6 +131,13 @@ h4 {
     margin: 5px;
     float: left;
     cursor: pointer;
+    border: 0;
+    border: none;
+}
+
+.item a, .item a img, .item img a {
+  border: 0;
+  border: none;
 }
 
 .item.image1-, .item.image1- img, .item.image1-1, .item.image1-2, .item.image1-3, .item.image1-4, .item.image1-1 img, .item.image1-2 img, .item.image1-3 img, .item.image1-4 img {
@@ -200,6 +207,10 @@ h4 {
   color: #FFF;
   background-color: #dcdcdc;
   cursor: pointer;
+}
+
+.item.category span {
+  color: #000;
 }
 
 /*
