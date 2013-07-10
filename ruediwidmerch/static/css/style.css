@@ -210,7 +210,9 @@ h4 {
 }
 
 .item.category span {
+  position: relative;
   color: #000;
+  top: -2px;
 }
 
 /*
