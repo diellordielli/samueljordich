@@ -439,6 +439,11 @@ h4 {
   bottom: 0px;
   width: 115px;
   right: -27px;
+  text-decoration: none;
+}
+
+.newsarchiveall a {
+  text-decoration: none;
 }
 
 .newssingletitle {
