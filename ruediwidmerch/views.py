@@ -34,7 +34,7 @@ def illustration_detail(request, id):
 
 
 def grafik(request):
-    cartoons = list(Illustration.objects.order_by('ordering'))
+    cartoons = list(Grafik.objects.order_by('ordering'))
     categories = Category.objects.all()
     cat_x_car = len(cartoons) / categories.count()
 
