@@ -43,7 +43,7 @@ def grafik(request):
 
     print cartoons
 
-    return render(request, 'index.html', {
+    return render(request, 'grafik.html', {
         'cartoons': cartoons,
         'categories': categories,
     })
