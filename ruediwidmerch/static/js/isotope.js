@@ -1,6 +1,7 @@
 $(function(){
 
     var $container = $('#container');
+        $items = $('.item');
   
     $container.isotope({
         itemSelector: '.item',
@@ -10,7 +11,7 @@ $(function(){
     })
 
     $(window).on('load', function() {
-        $('#container').isotope( 'reLayout' );
+        $container.isotope( 'reLayout' );
     })
 
     $('.item.portrait').click(function(){
@@ -25,11 +26,27 @@ $(function(){
 
     });
 
-    $('.item.category').click(function(){
-        var category = $(this).attr('title');
-        
-        $('#container').isotope({ filter: "." + category });
-        $('#container').data('filter', category);
+    $('.item.category').click(function() {
+        if ( $container.data('filter') === 'all') {
+            var category = $(this).attr('title');
+            
+            $container.isotope({ filter: "." + category });
+            $container.data('filter', category);
+
+            var $this = $(this);
+            $this.find('span').hide();
+            $this.find('.categoryclose').css({'display': 'inline'});
+        } else {
+            var selector = $('.item');
+                $this = $(this);
+
+            $container.isotope({ filter: selector });
+            $container.data('filter', 'all');
+
+            $this.find('span').show();
+            $this.find('.categoryclose').hide();
+        }
+
     });
 
 
@@ -44,4 +61,23 @@ $(function(){
 
         $this.find('.imagetext').fadeOut();
     });
+
+    /*
+
+    $('.item.category').click(function() {
+        
+
+        $('.item.category').click(function() {
+            var selector = $('.item');
+                $this = $(this);
+
+            $container.isotope({ filter: selector });
+            return false;
+
+            $this.find('span').show();
+            $this.find('.categoryclose').hide();
+        });
+    });
+
+*/
 });

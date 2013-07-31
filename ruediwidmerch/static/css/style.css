@@ -614,6 +614,11 @@ h4 {
   font-family:'Vialog LT W01 Light';
 }
 
+.categoryclose {
+  display: none;
+  color: black;
+}
+
 @media only screen and (max-width: 930px) {
   .newsarchiveall {
     position: relative;

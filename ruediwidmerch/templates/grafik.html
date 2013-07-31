@@ -25,7 +25,7 @@
                 </div>
             {% else %}
                 <div class="item category {{ cartoon.name|slugify }}" title="{{ cartoon.name|slugify }}">
-                    {{ cartoon.name }} <span>></span>
+                    {{ cartoon.name }} <span>></span><div class="categoryclose">✗</div>
                 </div>
             {% endif %}
         {% endfor %}

@@ -9,7 +9,7 @@
     </div>
 {% endblock %}
 {% block cartoons %}
-    <div id="container">
+    <div id="container" data-filter="all">
         {% for cartoon in cartoons %}
             {% if cartoon.image %}
                 <div class="item image{{ cartoon.width }}-{{ cartoon.height }} {{ cartoon.category|slugify }} cartoon">
@@ -25,7 +25,7 @@
                 </div>
             {% else %}
                 <div class="item category {{ cartoon.name|slugify }}" title="{{ cartoon.name|slugify }}">
-                    {{ cartoon.name }} <span>></span>
+                    {{ cartoon.name }} <span>></span><div class="categoryclose">✗</div>
                 </div>
             {% endif %}
         {% endfor %}
