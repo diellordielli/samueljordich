@@ -4,17 +4,17 @@ html, body {
 }
 
 .page {
-    position: relative;
-    max-width: 960px;
-    width: 100%;
-    top: 35px;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    font-family:'Vialog LT W01 Light';
-    background-color: #FFF;
+  position: relative;
+  max-width: 960px;
+  width: 100%;
+  top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  font-family:'Vialog LT W01 Light';
+  background-color: #FFF;
 
-    /*border-left: 1px solid red;*/
+  /*border-left: 1px solid red;*/
 }
 
 h4 {

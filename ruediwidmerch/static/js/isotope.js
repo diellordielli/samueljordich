@@ -9,6 +9,10 @@ $(function(){
         }
     })
 
+    $(window).on('load', function() {
+        $('#container').isotope( 'reLayout' );
+    })
+
     $('.item.portrait').click(function(){
         var $this = $(this),
             tileStyle = $this.hasClass('big');
