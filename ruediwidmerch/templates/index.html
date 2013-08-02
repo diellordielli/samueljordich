@@ -9,7 +9,7 @@
     </div>
 {% endblock %}
 {% block cartoons %}
-    <div id="container" data-filter="all">
+    <div id="container">
         {% for cartoon in cartoons %}
             {% if cartoon.image %}
                 <div class="item image{{ cartoon.width }}-{{ cartoon.height }} {{ cartoon.category|slugify }} cartoon">
